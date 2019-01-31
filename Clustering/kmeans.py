@@ -38,6 +38,7 @@ class KMeans:
 
             for centers in range(self.k):
                 points = [X[j, :] for j in range(X.shape[0]) if self._clusters[j] == centers]
+                # in case there is no assignment to a specific centroid, dont update the new center for it.
                 if len(points) > 0:
                     self._centroids[centers, :] = np.mean(points, axis=0)
 
