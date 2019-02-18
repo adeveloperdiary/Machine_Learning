@@ -257,13 +257,19 @@ observations_data, states_data = h.simulate(100)
 # print observations_data
 # print states_data
 
+a = np.array(((0.54, 0.46), (0.49, 0.51)))
+b = np.array(((0.16, 0.26, 0.58), (0.25, 0.28, 0.47)))
 
-a = np.array(((0.5, 0.5), (0.5, 0.5)))
-b = np.array(((0.1111111, 0.3333333, 0.5555556), (0.1666667, 0.3333333, 0.5000000)))
+
+#a = np.array(((0.5, 0.5), (0.5, 0.5)))
+#b = np.array(((0.1111111, 0.3333333, 0.5555556), (0.1666667, 0.3333333, 0.5000000)))
 
 initial_distribution = np.array((0.5, 0.5))
 
 guess = HMM(a,b,initial_distribution)
+
+guess._forward(data['X'])
+
 
 guess.simulate(100)
 
