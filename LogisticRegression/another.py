@@ -128,5 +128,5 @@ model.logisticRegressionFit(X_train, y, 5, 0.5)
 
 y_hat = model.predictClasses(X_train)
 
-(y_hat == y).mean()
+print((y_hat == y).mean())
 
