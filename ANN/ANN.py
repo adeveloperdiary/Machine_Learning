@@ -18,7 +18,7 @@ class ANN:
         return 1 / (1 + np.exp(-Z))
 
     def initialize_parameters(self):
-        np.random.seed(3)
+        np.random.seed(1)
 
         for l in range(1, len(self.layers_size)):
             self.parameters["W" + str(l)] = np.random.randn(self.layers_size[l], self.layers_size[l - 1]) / np.sqrt(self.layers_size[l - 1])
@@ -30,7 +30,7 @@ class ANN:
         A = X.T
         for l in range(self.L - 1):
             Z = self.parameters["W" + str(l + 1)].dot(A) + self.parameters["b" + str(l + 1)]
-            A = self.relu(Z)
+            A = self.sigmoid(Z)
             cache["A" + str(l + 1)] = A
             cache["W" + str(l + 1)] = self.parameters["W" + str(l + 1)]
             cache["Z" + str(l + 1)] = Z
@@ -46,8 +46,6 @@ class ANN:
     def sigmoid_derivative(self, Z):
         s = 1 / (1 + np.exp(-Z))
         return s * (1 - s)
-
-        return dZ
 
     def relu_derivative(self, dA, Z):
 
@@ -67,16 +65,16 @@ class ANN:
 
         dZ = dA * self.sigmoid_derivative(cache["Z" + str(self.L)])
         dW = dZ.dot(cache["A" + str(self.L - 1)].T) / self.n
-        db = np.sum(dZ, axis=1, keepdims=True)
+        db = np.sum(dZ, axis=1, keepdims=True) / self.n
         dAPrev = cache["W" + str(self.L)].T.dot(dZ)
 
         derivatives["dW" + str(self.L)] = dW
         derivatives["db" + str(self.L)] = db
 
         for l in range(self.L - 1, 0, -1):
-            dZ = dAPrev * self.relu_derivative(dAPrev, cache["Z" + str(l)])
-            dW = dZ.dot(cache["A" + str(l - 1)].T) / self.n
-            db = np.sum(dZ, axis=1, keepdims=True)
+            dZ = dAPrev * self.sigmoid_derivative(cache["Z" + str(l)])
+            dW = 1. / self.n * dZ.dot(cache["A" + str(l - 1)].T)
+            db = 1. / self.n * np.sum(dZ, axis=1, keepdims=True)
             if l > 1:
                 dAPrev = cache["W" + str(l)].T.dot(dZ)
 
@@ -92,7 +90,7 @@ class ANN:
         self.initialize_parameters()
         for loop in range(n_iterations):
             A, cache = self.forward(X)
-            cost = np.squeeze(-(Y.dot(np.log(A.T)) - (1 - Y).dot(np.log(1 - A.T))) / self.n)
+            cost = np.squeeze(-(Y.dot(np.log(A.T)) + (1 - Y).dot(np.log(1 - A.T))) / self.n)
             derivatives = self.backward(X, Y, cache)
 
             for l in range(1, self.L + 1):
@@ -101,21 +99,22 @@ class ANN:
                 self.parameters["b" + str(l)] = self.parameters["b" + str(l)] - learning_rate * derivatives[
                     "db" + str(l)]
 
-            if loop % 500 == 0:
+            if loop % 100 == 0:
                 print(cost)
 
     def predict(self, X, Y):
         A, cache = self.forward(X)
         n = X.shape[0]
-        y_hat = np.zeros((n, 1))
+        p = np.zeros((1, n))
 
-        for i in range(A.shape[1]):
+        for i in range(0, A.shape[1]):
             if A[0, i] > 0.5:
-                y_hat[i, 0] = 1
+                p[0, i] = 1
             else:
-                y_hat[i, 0] = 0
+                p[0, i] = 0
 
-        return np.mean(y_hat == Y)
+        print("Accuracy: " + str(np.sum((p == Y) / n)))
+
 
 
 def load_data():
@@ -152,8 +151,9 @@ if __name__ == '__main__':
     print("test_x's shape: " + str(test_x.shape))
 
     layers_dims = [12288, 20, 7, 5, 1]
+    layers_dims = [12288, 7, 1]
 
     ann = ANN(layers_dims)
-    ann.fit(train_x, train_y, learning_rate=0.01, n_iterations=4000)
-    print(ann.predict(train_x, train_y))
-    print(ann.predict(test_x, test_y))
+    ann.fit(train_x, train_y, learning_rate=0.0075, n_iterations=2500)
+    ann.predict(train_x, train_y)
+    ann.predict(test_x, test_y)

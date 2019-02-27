@@ -73,7 +73,7 @@ def L_model_forward(X, parameters):
     for l in range(1, L):
         A_prev = A
         Z, linear_cache = linear_forward(A_prev, parameters['W' + str(l)], parameters['b' + str(l)])
-        A, activation_cache = relu(Z)
+        A, activation_cache = sigmoid(Z)
         cache = (linear_cache, activation_cache)
         caches.append(cache)
 
@@ -110,7 +110,7 @@ def L_model_backward(AL, Y, caches):
 
     for l in reversed(range(L - 1)):
         linear_cache, activation_cache = caches[l]
-        dZ = relu_backward(grads["dA" + str(l + 1)], activation_cache)
+        dZ = sigmoid_backward(grads["dA" + str(l + 1)], activation_cache)
         dA_prev_temp, dW_temp, db_temp = linear_backward(dZ, linear_cache)
         grads["dA" + str(l)] = dA_prev_temp
         grads["dW" + str(l + 1)] = dW_temp
@@ -177,7 +177,6 @@ def L_layer_model(X, Y, layers_dims, learning_rate=0.0075, num_iterations=3000, 
 
 # layers_dims = [12288, 20, 7, 5, 1]  # 4-layer model
 
-print("test")
 layers_dims = [12288, 7, 1]
 
 train_x_orig, train_y, test_x_orig, test_y, classes = load_data()
