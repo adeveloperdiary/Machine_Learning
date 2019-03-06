@@ -175,9 +175,9 @@ def L_layer_model(X, Y, layers_dims, learning_rate=0.0075, num_iterations=3000, 
     return parameters
 
 
-# layers_dims = [12288, 20, 7, 5, 1]  # 4-layer model
+layers_dims = [12288, 20, 7, 5, 1]  # 4-layer model
 
-layers_dims = [12288, 7, 1]
+#layers_dims = [12288, 7, 1]
 
 train_x_orig, train_y, test_x_orig, test_y, classes = load_data()
 m_train = train_x_orig.shape[0]

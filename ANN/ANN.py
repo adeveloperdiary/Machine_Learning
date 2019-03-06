@@ -150,7 +150,7 @@ if __name__ == '__main__':
     print("train_x's shape: " + str(train_x.shape))
     print("test_x's shape: " + str(test_x.shape))
 
-    layers_dims = [12288, 20, 7, 5, 1]
+    #layers_dims = [12288, 20, 7, 5, 1]
     layers_dims = [12288, 7, 1]
 
     ann = ANN(layers_dims)
