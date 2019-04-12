@@ -1,6 +1,6 @@
-#Machine Learning
+# Machine Learning
 
-#Deep Learning
+# Deep Learning
 
 ## Artificial Neural Network
     - Basic
