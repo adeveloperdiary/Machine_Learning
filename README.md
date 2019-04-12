@@ -4,6 +4,19 @@
 
 ## Artificial Neural Network
     - Basic
+        - Binary Classification
+            - Python Implementation
+            - TensorFlow Implementation
+                - Static/Dynamic Computation Graph
+                - Keras Implementation 
+            - PyTorch Implementation
+        - Multiclass Classification
+            - Python Implementation
+            - TensorFlow Implementation
+                - Static/Dynamic Computation Graph
+                - Keras Implementation 
+            - PyTorch Implementation
+    - Mini Batches
         - Python Implementation
         - TensorFlow Implementation
             - Static/Dynamic Computation Graph
