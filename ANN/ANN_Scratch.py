@@ -1,5 +1,4 @@
 import numpy as np
-#from dnn_app_utils_v3 import *
 import h5py
 
 
