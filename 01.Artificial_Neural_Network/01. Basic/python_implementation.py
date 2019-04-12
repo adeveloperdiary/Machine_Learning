@@ -1,6 +1,6 @@
 import numpy as np
 import h5py
-
+import os
 
 class ANN:
     def __init__(self, layers_size):
@@ -117,11 +117,14 @@ class ANN:
 
 
 def load_data():
-    train_dataset = h5py.File('00.datasets/train_catvnoncat.h5', "r")
+
+
+
+    train_dataset = h5py.File('../../00.datasets/cat/train_catvnoncat.h5', "r")
     train_set_x_orig = np.array(train_dataset["train_set_x"][:])  # your train set features
     train_set_y_orig = np.array(train_dataset["train_set_y"][:])  # your train set labels
 
-    test_dataset = h5py.File('00.datasets/test_catvnoncat.h5', "r")
+    test_dataset = h5py.File('../../00.datasets/cat/test_catvnoncat.h5', "r")
     test_set_x_orig = np.array(test_dataset["test_set_x"][:])  # your test set features
     test_set_y_orig = np.array(test_dataset["test_set_y"][:])  # your test set labels
 
@@ -149,8 +152,8 @@ if __name__ == '__main__':
     print("train_x's shape: " + str(train_x.shape))
     print("test_x's shape: " + str(test_x.shape))
 
-    #layers_dims = [12288, 20, 7, 5, 1]
-    layers_dims = [12288, 7, 1]
+    layers_dims = [12288, 20, 7, 5, 1]
+    #layers_dims = [12288, 7, 1]
 
     ann = ANN(layers_dims)
     ann.fit(train_x, train_y, learning_rate=0.0075, n_iterations=2500)
