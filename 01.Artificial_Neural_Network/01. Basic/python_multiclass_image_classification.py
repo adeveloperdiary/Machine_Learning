@@ -57,7 +57,7 @@ class ANN:
         store["A0"] = X.T
 
         A = store["A" + str(self.L)]
-        dA = A-Y
+        dA = A-Y.T
 
         dW = dA.dot(store["Z" + str(self.L - 1)].T) / self.n
         db = np.sum(dA, axis=1, keepdims=True) / self.n
@@ -85,7 +85,7 @@ class ANN:
         self.initialize_parameters()
         for loop in range(n_iterations):
             A, store = self.forward(X)
-            cost = -np.sum(Y * np.log(A.T))
+            cost = -np.mean(Y * np.log(A.T))
             derivatives = self.backward(X, Y, store)
 
             for l in range(1, self.L + 1):
@@ -119,6 +119,37 @@ class ANN:
         plt.show()
 
 
+def get_binary_dataset():
+    train_x_orig, train_y_orig, test_x_orig, test_y_orig = mnist.get_data()
+
+    index_5 = np.where(train_y_orig == 5)
+    index_8 = np.where(train_y_orig == 8)
+
+    index = np.concatenate([index_5[0], index_8[0]])
+    np.random.seed(1)
+    np.random.shuffle(index)
+
+    train_y = train_y_orig[index]
+    train_x = train_x_orig[index]
+
+    train_y[np.where(train_y == 5)] = 0
+    train_y[np.where(train_y == 8)] = 1
+
+    index_5 = np.where(test_y_orig == 5)
+    index_8 = np.where(test_y_orig == 8)
+
+    index = np.concatenate([index_5[0], index_8[0]])
+    np.random.shuffle(index)
+
+    test_y = test_y_orig[index]
+    test_x = test_x_orig[index]
+
+    test_y[np.where(test_y == 5)] = 0
+    test_y[np.where(test_y == 8)] = 1
+
+    return train_x, train_y, test_x, test_y
+
+
 def pre_process_data(train_x, train_y, test_x, test_y):
     # Normalize
     train_x = train_x / 255.
@@ -133,17 +164,17 @@ def pre_process_data(train_x, train_y, test_x, test_y):
 
 
 if __name__ == '__main__':
-    train_x_orig, train_y_orig, test_x_orig, test_y_orig = mnist.get_data()
+    train_x, train_y, test_x, test_y = get_binary_dataset()
 
-    train_x, train_y, test_x, test_y = pre_process_data(train_x_orig, train_y_orig, test_x_orig, test_y_orig)
+    train_x, train_y, test_x, test_y = pre_process_data(train_x, train_y, test_x, test_y)
 
     print("train_x's shape: " + str(train_x.shape))
     print("test_x's shape: " + str(test_x.shape))
 
-    layers_dims = [784, 196, 10]
+    layers_dims = [784, 196, 2]
 
     ann = ANN(layers_dims)
-    ann.fit(train_x, train_y, learning_rate=0.01, n_iterations=1)
+    ann.fit(train_x, train_y, learning_rate=0.001, n_iterations=10000)
     # ann.predict(train_x, train_y)
     # ann.predict(test_x, test_y)
     # ann.plot_cost()
