@@ -1,8 +1,7 @@
 import tensorflow as tf
 import numpy as np
-import datasets.mnist.loader as mnist
-from sklearn.preprocessing import OneHotEncoder
 import matplotlib.pyplot as plt
+from util import get_binary_dataset, pre_process_data
 
 
 class ANN:
@@ -19,7 +18,7 @@ class ANN:
     def initialize_parameters(self):
         tf.set_random_seed(1)
 
-        for l in range(1, self.L):
+        for l in range(1, self.L + 1):
             self.parameters["W" + str(l)] = tf.get_variable("W" + str(l),
                                                             shape=[self.layers_size[l], self.layers_size[l - 1]],
                                                             initializer=tf.contrib.layers.xavier_initializer(seed=1))
@@ -39,10 +38,10 @@ class ANN:
                 self.store["Z" + str(l)] = tf.add(
                     tf.matmul(self.parameters["W" + str(l)], self.store["A" + str(l - 1)]),
                     self.parameters["b" + str(l)])
-            if l < self.L - 1:
+            if l < self.L:
                 self.store["A" + str(l)] = tf.nn.relu(self.store["Z" + str(l)])
 
-    def fit(self, X_train, Y_train, learning_rate=0.01, n_iterations=2500):
+    def fit_predict(self, X_train, Y_train, X_test, Y_test, learning_rate=0.01, n_iterations=2500):
         tf.set_random_seed(1)
         _, f = X_train.shape
         _, c = Y_train.shape
@@ -51,11 +50,13 @@ class ANN:
         self.X = tf.placeholder(tf.float32, shape=[None, f], name='X')
         self.Y = tf.placeholder(tf.float32, shape=[None, c], name='Y')
 
+        self.layers_size.insert(0, f)
+
         self.initialize_parameters()
 
         self.forward()
 
-        softmax = tf.nn.softmax_cross_entropy_with_logits_v2(logits=tf.transpose(self.store["Z" + str(self.L - 1)]),
+        softmax = tf.nn.softmax_cross_entropy_with_logits_v2(logits=tf.transpose(self.store["Z" + str(self.L)]),
                                                              labels=self.Y)
 
         '''
@@ -90,7 +91,7 @@ class ANN:
 
                 if epoch % 100 == 0:
                     sess.run(self.parameters_array)
-                    correct_prediction = tf.equal(tf.argmax(self.store["Z" + str(self.L - 1)]),
+                    correct_prediction = tf.equal(tf.argmax(self.store["Z" + str(self.L)]),
                                                   tf.argmax(tf.transpose(self.Y)))
 
                     accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
@@ -100,7 +101,12 @@ class ANN:
                 if epoch % 10 == 0:
                     self.costs.append(epoch_cost)
 
-            saver.save(sess, "tmp/model.ckpt")
+            sess.run(self.parameters_array)
+            correct_prediction = tf.equal(tf.argmax(self.store["Z" + str(self.L)]),
+                                          tf.argmax(tf.transpose(self.Y)))
+
+            accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
+            print("Test Accuracy %f" % (accuracy.eval({self.X: X_test, self.Y: Y_test})))
 
     def plot_cost(self):
         plt.figure()
@@ -108,63 +114,6 @@ class ANN:
         plt.xlabel("epochs")
         plt.ylabel("cost")
         plt.show()
-
-    def predict(self, X_test, Y_test):
-        tf.reset_default_graph()
-        saver = tf.train.Saver()
-
-        with tf.Session() as sess:
-            saver.restore(sess, "tmp/model.ckpt")
-            sess.run(self.parameters_array)
-            correct_prediction = tf.equal(tf.argmax(self.store["Z" + str(self.L - 1)]),
-                                          tf.argmax(tf.transpose(self.Y)))
-
-            accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
-            print("Test Accuracy %f" % (accuracy.eval({self.X: X_test, self.Y: Y_test})))
-
-
-def get_binary_dataset():
-    train_x_orig, train_y_orig, test_x_orig, test_y_orig = mnist.get_data()
-
-    index_5 = np.where(train_y_orig == 5)
-    index_8 = np.where(train_y_orig == 8)
-
-    index = np.concatenate([index_5[0], index_8[0]])
-    np.random.seed(1)
-    np.random.shuffle(index)
-
-    train_y = train_y_orig[index]
-    train_x = train_x_orig[index]
-
-    train_y[np.where(train_y == 5)] = 0
-    train_y[np.where(train_y == 8)] = 1
-
-    index_5 = np.where(test_y_orig == 5)
-    index_8 = np.where(test_y_orig == 8)
-
-    index = np.concatenate([index_5[0], index_8[0]])
-    np.random.shuffle(index)
-
-    test_y = test_y_orig[index]
-    test_x = test_x_orig[index]
-
-    test_y[np.where(test_y == 5)] = 0
-    test_y[np.where(test_y == 8)] = 1
-
-    return train_x, train_y, test_x, test_y
-
-
-def pre_process_data(train_x, train_y, test_x, test_y):
-    # Normalize
-    train_x = train_x / 255.
-    test_x = test_x / 255.
-
-    enc = OneHotEncoder(sparse=False, categories='auto')
-    train_y = enc.fit_transform(train_y.reshape(len(train_y), -1))
-
-    test_y = enc.transform(test_y.reshape(len(test_y), -1))
-
-    return train_x, train_y, test_x, test_y
 
 
 if __name__ == '__main__':
@@ -175,7 +124,6 @@ if __name__ == '__main__':
     print("train_x's shape: " + str(train_x.shape))
     print("test_x's shape: " + str(test_x.shape))
 
-    model = ANN(layers_size=[784, 784, 196, 2])
-    model.fit(train_x, train_y, learning_rate=0.01, n_iterations=100)
+    model = ANN(layers_size=[784, 196, 2])
+    model.fit_predict(train_x, train_y, test_x, test_y, learning_rate=0.01, n_iterations=100)
     model.plot_cost()
-    model.predict(test_x, test_y)

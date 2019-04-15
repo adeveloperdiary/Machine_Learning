@@ -1,7 +1,7 @@
 import numpy as np
 import datasets.mnist.loader as mnist
 import matplotlib.pylab as plt
-
+from util import get_binary_dataset
 
 class ANN:
     def __init__(self, layers_size):
@@ -114,38 +114,6 @@ class ANN:
         plt.ylabel("cost")
         plt.show()
 
-
-def get_binary_dataset():
-    train_x_orig, train_y_orig, test_x_orig, test_y_orig = mnist.get_data()
-
-    index_5 = np.where(train_y_orig == 5)
-    index_8 = np.where(train_y_orig == 8)
-
-    index = np.concatenate([index_5[0], index_8[0]])
-    np.random.seed(1)
-    np.random.shuffle(index)
-
-    train_y = train_y_orig[index]
-    train_x = train_x_orig[index]
-
-    train_y[np.where(train_y == 5)] = 0
-    train_y[np.where(train_y == 8)] = 1
-
-    index_5 = np.where(test_y_orig == 5)
-    index_8 = np.where(test_y_orig == 8)
-
-    index = np.concatenate([index_5[0], index_8[0]])
-    np.random.shuffle(index)
-
-    test_y = test_y_orig[index]
-    test_x = test_x_orig[index]
-
-    test_y[np.where(test_y == 5)] = 0
-    test_y[np.where(test_y == 8)] = 1
-
-    return train_x, train_y, test_x, test_y
-
-
 def pre_process_data(train_x, test_x):
     # Normalize
     train_x = train_x / 255.
@@ -165,7 +133,7 @@ if __name__ == '__main__':
     layers_dims = [784, 196, 1]
 
     ann = ANN(layers_dims)
-    ann.fit(train_x, train_y, learning_rate=0.1, n_iterations=2000)
+    ann.fit(train_x, train_y, learning_rate=0.1, n_iterations=1000)
     ann.predict(train_x, train_y)
     ann.predict(test_x, test_y)
     ann.plot_cost()
