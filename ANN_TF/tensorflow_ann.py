@@ -48,10 +48,11 @@ A2 = tf.nn.relu(Z2)
 Z3 = tf.add(tf.matmul(W3, A2), b3)
 
 # Cost Calculation
+
 logits = tf.transpose(Z3)
 labels = tf.transpose(Y)
 
-cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=labels))
+cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(logits=logits, labels=labels))
 
 # Back-Propagation
 optimizer = tf.train.AdamOptimizer(learning_rate=0.0001).minimize(cost)

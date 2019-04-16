@@ -39,9 +39,8 @@ def pre_process_data(train_x, train_y, test_x, test_y):
     train_x = train_x / 255.
     test_x = test_x / 255.
 
-    # enc = OneHotEncoder(sparse=False, categories='auto')
-    # train_y = enc.fit_transform(train_y.reshape(len(train_y), -1))
-
-    # test_y = enc.transform(test_y.reshape(len(test_y), -1))
+    enc = OneHotEncoder(sparse=False, categories='auto')
+    train_y = enc.fit_transform(train_y.reshape(len(train_y), -1))
+    test_y = enc.transform(test_y.reshape(len(test_y), -1))
 
     return train_x, train_y, test_x, test_y
