@@ -1,9 +1,9 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from util import get_binary_dataset
 import torch.utils.data as data
 from torch.autograd import Variable
+from A_01_Artificial_Neural_Network.util import get_binary_dataset
 
 
 class ANN(nn.Module):
