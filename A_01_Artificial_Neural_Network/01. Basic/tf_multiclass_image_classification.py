@@ -1,8 +1,8 @@
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
-from util import get_binary_dataset, pre_process_data
-
+from A_01_Artificial_Neural_Network.util import get_binary_dataset, pre_process_data
+import datasets.mnist.loader as mnist
 
 class ANN:
     def __init__(self, layers_size):
@@ -117,13 +117,13 @@ class ANN:
 
 
 if __name__ == '__main__':
-    train_x_orig, train_y_orig, test_x_orig, test_y_orig = get_binary_dataset()
+    train_x_orig, train_y_orig, test_x_orig, test_y_orig = mnist.get_data()
 
     train_x, train_y, test_x, test_y = pre_process_data(train_x_orig, train_y_orig, test_x_orig, test_y_orig)
 
     print("train_x's shape: " + str(train_x.shape))
     print("test_x's shape: " + str(test_x.shape))
 
-    model = ANN(layers_size=[784, 196, 2])
+    model = ANN(layers_size=[784, 196, 10])
     model.fit_predict(train_x, train_y, test_x, test_y, learning_rate=0.01, n_iterations=100)
     model.plot_cost()

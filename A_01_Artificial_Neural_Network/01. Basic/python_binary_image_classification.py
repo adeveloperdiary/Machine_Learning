@@ -1,13 +1,13 @@
 import numpy as np
 import datasets.mnist.loader as mnist
 import matplotlib.pylab as plt
-from util import get_binary_dataset
+from A_01_Artificial_Neural_Network.util import get_binary_dataset
 
 class ANN:
     def __init__(self, layers_size):
         self.layers_size = layers_size
         self.parameters = {}
-        self.L = len(self.layers_size) - 1
+        self.L = len(self.layers_size)
         self.n = 0
         self.costs = []
 
@@ -78,6 +78,9 @@ class ANN:
         np.random.seed(1)
 
         self.n = X.shape[0]
+
+        self.layers_size.insert(0, X.shape[1])
+
         self.initialize_parameters()
         for loop in range(n_iterations):
             A, store = self.forward(X)
@@ -130,7 +133,7 @@ if __name__ == '__main__':
     print("train_x's shape: " + str(train_x.shape))
     print("test_x's shape: " + str(test_x.shape))
 
-    layers_dims = [784, 196, 1]
+    layers_dims = [392,196,98,1]
 
     ann = ANN(layers_dims)
     ann.fit(train_x, train_y, learning_rate=0.1, n_iterations=1000)
