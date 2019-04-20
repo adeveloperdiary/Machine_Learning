@@ -126,3 +126,4 @@ if __name__ == '__main__':
     model.to(device)
     model.fit(train_x, train_y, learning_rate=0.1, n_iterations=1000)
     model.predict(test_x, test_y)
+    model.plot_cost()
