@@ -27,7 +27,6 @@ class ANN(nn.Module):
         super(ANN, self).__init__()
         self.layers_size = layers_size
         self.L = len(layers_size)
-        self.params = {}
         self.costs = []
 
     def initialize_parameters(self):
@@ -53,17 +52,16 @@ class ANN(nn.Module):
 
         self.initialize_parameters()
 
-        train_dataset = self.MyDataLoader(X, Y)
-        data_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=2048, num_workers=32)
-
         optimizer = torch.optim.SGD(self.parameters(), lr=learning_rate)
         criterion = nn.NLLLoss()
+
+        train_dataset = self.MyDataLoader(X, Y)
+        data_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=2048, num_workers=32)
 
         for epoch in range(n_iterations):
             for k, (inputs, target) in enumerate(data_loader):
                 inputs, target = inputs.to(device), target.to(device)
 
-                inputs, target = Variable(inputs), Variable(target)
                 optimizer.zero_grad()
                 forward = self(inputs)
                 loss = criterion(forward, target)
@@ -123,7 +121,6 @@ if __name__ == '__main__':
     train_x, train_y, test_x, test_y = pre_process_data(train_x_orig, train_y_orig, test_x_orig, test_y_orig)
 
     model = ANN(layers_size=[196, 10])
-    model.to(device)
     model.fit(train_x, train_y, learning_rate=0.1, n_iterations=1000)
     model.predict(test_x, test_y)
     model.plot_cost()
