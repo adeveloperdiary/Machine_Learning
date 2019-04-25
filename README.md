@@ -12,10 +12,7 @@
                 - Static/Dynamic Computation Graph
                 - Keras Implementation 
     - Mini Batches
-        - Python Implementation
-        - TensorFlow Implementation
-            - Static/Dynamic Computation Graph
-            - Keras Implementation 
+        - Python Implementation [Done]
         - PyTorch Implementation [Done]
     - Advance Optimization Algorithm
         - Momentum

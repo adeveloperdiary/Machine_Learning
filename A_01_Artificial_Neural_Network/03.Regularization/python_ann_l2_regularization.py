@@ -1,26 +1,20 @@
 import numpy as np
 import datasets.mnist.loader as mnist
 import matplotlib.pylab as plt
-from sklearn.preprocessing import OneHotEncoder
 from A_01_Artificial_Neural_Network.util import get_binary_dataset
 
+
 class ANN:
-    def __init__(self, layers_size):
+    def __init__(self, layers_size, lambda_value=0):
         self.layers_size = layers_size
         self.parameters = {}
         self.L = len(self.layers_size)
         self.n = 0
         self.costs = []
+        self.lambda_value = lambda_value
 
     def sigmoid(self, Z):
         return 1 / (1 + np.exp(-Z))
-
-    def relu(self, Z):
-        return np.maximum(0, Z)
-
-    def softmax(self, Z):
-        expZ = np.exp(Z - np.max(Z))
-        return expZ / expZ.sum(axis=0, keepdims=True)
 
     def initialize_parameters(self):
         np.random.seed(1)
@@ -42,18 +36,16 @@ class ANN:
             store["Z" + str(l + 1)] = Z
 
         Z = self.parameters["W" + str(self.L)].dot(A) + self.parameters["b" + str(self.L)]
-        A = self.softmax(Z)
+        A = self.sigmoid(Z)
         store["A" + str(self.L)] = A
         store["W" + str(self.L)] = self.parameters["W" + str(self.L)]
         store["Z" + str(self.L)] = Z
 
         return A, store
 
-    def relu_derivative(self, dA, Z):
-        dZ = np.array(dA, copy=True)
-        dZ[Z <= 0] = 0
-
-        return dZ
+    def sigmoid_derivative(self, Z):
+        s = 1 / (1 + np.exp(-Z))
+        return s * (1 - s)
 
     def backward(self, X, Y, store):
 
@@ -62,9 +54,10 @@ class ANN:
         store["A0"] = X.T
 
         A = store["A" + str(self.L)]
-        dZ = A - Y.T
+        dA = -np.divide(Y, A) + np.divide(1 - Y, 1 - A)
 
-        dW = dZ.dot(store["A" + str(self.L - 1)].T) / self.n
+        dZ = dA * self.sigmoid_derivative(store["Z" + str(self.L)])
+        dW = dZ.dot(store["A" + str(self.L - 1)].T) / self.n + (self.lambda_value*store["W" + str(self.L)])/self.n
         db = np.sum(dZ, axis=1, keepdims=True) / self.n
         dAPrev = store["W" + str(self.L)].T.dot(dZ)
 
@@ -72,9 +65,9 @@ class ANN:
         derivatives["db" + str(self.L)] = db
 
         for l in range(self.L - 1, 0, -1):
-            dZ = dAPrev * self.sigmoid(dAPrev, store["Z" + str(l)])
-            dW = dZ.dot(store["A" + str(l - 1)].T) / self.n
-            db = np.sum(dZ, axis=1, keepdims=True) / self.n
+            dZ = dAPrev * self.sigmoid_derivative(store["Z" + str(l)])
+            dW = 1. / self.n * dZ.dot(store["A" + str(l - 1)].T) + (self.lambda_value*store["W" + str(l)])/self.n
+            db = 1. / self.n * np.sum(dZ, axis=1, keepdims=True)
             if l > 1:
                 dAPrev = store["W" + str(l)].T.dot(dZ)
 
@@ -83,7 +76,19 @@ class ANN:
 
         return derivatives
 
-    def fit(self, X, Y, learning_rate=0.01, n_iterations=2500):
+    def calculate_cost(self, Y, A):
+        cross_entropy_cost = np.squeeze(-(Y.dot(np.log(A.T)) + (1 - Y).dot(np.log(1 - A.T))) / self.n)
+
+        regularization_cost = 0;
+
+        for l in range(1, len(self.layers_size)):
+            regularization_cost += np.sum(np.square(self.parameters["W" + str(l)]))
+
+        regularization_cost = (2 / self.n) * self.lambda_value * regularization_cost
+
+        return cross_entropy_cost + regularization_cost
+
+    def fit(self, X, Y, learning_rate=0.01, n_iterations=2500, ):
         np.random.seed(1)
 
         self.n = X.shape[0]
@@ -92,9 +97,10 @@ class ANN:
 
         self.initialize_parameters()
         for loop in range(n_iterations):
-
             A, store = self.forward(X)
-            cost = -np.mean(Y * np.log(A.T + 0.000001))
+
+            cost = np.squeeze(-(Y.dot(np.log(A.T)) + (1 - Y).dot(np.log(1 - A.T))) / self.n)
+
             derivatives = self.backward(X, Y, store)
 
             for l in range(1, self.L + 1):
@@ -105,16 +111,21 @@ class ANN:
 
             if loop % 100 == 0:
                 print("Cost: ", cost, "Train Accuracy:", self.predict(X, Y))
-
-            if loop % 10 == 0:
                 self.costs.append(cost)
+                self.predict(X, Y)
 
     def predict(self, X, Y):
         A, cache = self.forward(X)
-        y_hat = np.argmax(A, axis=0)
-        Y = np.argmax(Y, axis=1)
-        accuracy = (y_hat == Y).mean()
-        return accuracy * 100
+        n = X.shape[0]
+        p = np.zeros((1, n))
+
+        for i in range(0, A.shape[1]):
+            if A[0, i] > 0.5:
+                p[0, i] = 1
+            else:
+                p[0, i] = 0
+
+        return np.sum((p == Y) / n)
 
     def plot_cost(self):
         plt.figure()
@@ -124,32 +135,26 @@ class ANN:
         plt.show()
 
 
-def pre_process_data(train_x, train_y, test_x, test_y):
+def pre_process_data(train_x, test_x):
     # Normalize
     train_x = train_x / 255.
     test_x = test_x / 255.
 
-    enc = OneHotEncoder(sparse=False, categories='auto')
-    train_y = enc.fit_transform(train_y.reshape(len(train_y), -1))
-
-    test_y = enc.transform(test_y.reshape(len(test_y), -1))
-
-    return train_x, train_y, test_x, test_y
+    return train_x, test_x
 
 
 if __name__ == '__main__':
-    # train_x, train_y, test_x, test_y = mnist.get_data()
     train_x, train_y, test_x, test_y = get_binary_dataset()
 
-    train_x, train_y, test_x, test_y = pre_process_data(train_x, train_y, test_x, test_y)
+    train_x, test_x = pre_process_data(train_x, test_x)
 
     print("train_x's shape: " + str(train_x.shape))
     print("test_x's shape: " + str(test_x.shape))
 
-    layers_dims = [196, 2]
+    layers_dims = [196, 98, 49, 1]
 
-    ann = ANN(layers_dims)
-    ann.fit(train_x, train_y, learning_rate=0.001, n_iterations=1000)
+    ann = ANN(layers_dims,lambda_value=0)
+    ann.fit(train_x, train_y, learning_rate=0.1, n_iterations=3000)
     print("Train Accuracy:", ann.predict(train_x, train_y))
     print("Test Accuracy:", ann.predict(test_x, test_y))
     ann.plot_cost()
