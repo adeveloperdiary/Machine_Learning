@@ -49,6 +49,10 @@ class ANN:
 
         return A, store
 
+    def sigmoid_derivative(self, Z):
+        s = 1 / (1 + np.exp(-Z))
+        return s * (1 - s)
+
     def relu_derivative(self, dA, Z):
         dZ = np.array(dA, copy=True)
         dZ[Z <= 0] = 0
@@ -72,9 +76,9 @@ class ANN:
         derivatives["db" + str(self.L)] = db
 
         for l in range(self.L - 1, 0, -1):
-            dZ = dAPrev * self.sigmoid(dAPrev, store["Z" + str(l)])
-            dW = dZ.dot(store["A" + str(l - 1)].T) / self.n
-            db = np.sum(dZ, axis=1, keepdims=True) / self.n
+            dZ = dAPrev * self.sigmoid_derivative(store["Z" + str(l)])
+            dW = 1. / self.n * dZ.dot(store["A" + str(l - 1)].T)
+            db = 1. / self.n * np.sum(dZ, axis=1, keepdims=True)
             if l > 1:
                 dAPrev = store["W" + str(l)].T.dot(dZ)
 
@@ -82,6 +86,11 @@ class ANN:
             derivatives["db" + str(l)] = db
 
         return derivatives
+
+    def get_mini_batches(self, X):
+        length = X.shape[0]
+
+        batches = []
 
     def fit(self, X, Y, learning_rate=0.01, n_iterations=2500):
         np.random.seed(1)
@@ -91,10 +100,10 @@ class ANN:
         self.layers_size.insert(0, X.shape[1])
 
         self.initialize_parameters()
-        for loop in range(n_iterations):
+        for epoch in range(n_iterations):
 
             A, store = self.forward(X)
-            cost = -np.mean(Y * np.log(A.T + 0.000001))
+            cost = -np.mean(Y * np.log(A.T))
             derivatives = self.backward(X, Y, store)
 
             for l in range(1, self.L + 1):
@@ -103,10 +112,10 @@ class ANN:
                 self.parameters["b" + str(l)] = self.parameters["b" + str(l)] - learning_rate * derivatives[
                     "db" + str(l)]
 
-            if loop % 100 == 0:
-                print("Cost: ", cost, "Train Accuracy:", self.predict(X, Y))
+            if epoch % 100 == 0:
+                print(cost, self.predict(X, Y))
 
-            if loop % 10 == 0:
+            if epoch % 10 == 0:
                 self.costs.append(cost)
 
     def predict(self, X, Y):
@@ -169,8 +178,8 @@ def pre_process_data(train_x, train_y, test_x, test_y):
 
 
 if __name__ == '__main__':
-    # train_x, train_y, test_x, test_y = mnist.get_data()
-    train_x, train_y, test_x, test_y = get_binary_dataset()
+    train_x, train_y, test_x, test_y = mnist.get_data()
+    # train_x, train_y, test_x, test_y = get_binary_dataset()
 
     train_x, train_y, test_x, test_y = pre_process_data(train_x, train_y, test_x, test_y)
 
@@ -180,7 +189,7 @@ if __name__ == '__main__':
     layers_dims = [196, 2]
 
     ann = ANN(layers_dims)
-    ann.fit(train_x, train_y, learning_rate=0.001, n_iterations=1000)
-    print("Train Accuracy:", ann.predict(train_x, train_y))
-    print("Test Accuracy:", ann.predict(test_x, test_y))
+    ann.fit(train_x, train_y, learning_rate=0.1, n_iterations=1000)
+    ann.predict(train_x, train_y)
+    ann.predict(test_x, test_y)
     ann.plot_cost()
