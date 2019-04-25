@@ -57,7 +57,8 @@ class ANN:
         dA = -np.divide(Y, A) + np.divide(1 - Y, 1 - A)
 
         dZ = dA * self.sigmoid_derivative(store["Z" + str(self.L)])
-        dW = dZ.dot(store["A" + str(self.L - 1)].T) / self.n + (self.lambda_value*store["W" + str(self.L)])/self.n
+        # Modified Line
+        dW = dZ.dot(store["A" + str(self.L - 1)].T) / self.n + (self.lambda_value * store["W" + str(self.L)]) / self.n
         db = np.sum(dZ, axis=1, keepdims=True) / self.n
         dAPrev = store["W" + str(self.L)].T.dot(dZ)
 
@@ -66,7 +67,8 @@ class ANN:
 
         for l in range(self.L - 1, 0, -1):
             dZ = dAPrev * self.sigmoid_derivative(store["Z" + str(l)])
-            dW = 1. / self.n * dZ.dot(store["A" + str(l - 1)].T) + (self.lambda_value*store["W" + str(l)])/self.n
+            # Modified Line
+            dW = 1. / self.n * dZ.dot(store["A" + str(l - 1)].T) + (self.lambda_value * store["W" + str(l)]) / self.n
             db = 1. / self.n * np.sum(dZ, axis=1, keepdims=True)
             if l > 1:
                 dAPrev = store["W" + str(l)].T.dot(dZ)
@@ -99,7 +101,8 @@ class ANN:
         for loop in range(n_iterations):
             A, store = self.forward(X)
 
-            cost = np.squeeze(-(Y.dot(np.log(A.T)) + (1 - Y).dot(np.log(1 - A.T))) / self.n)
+            # New Line
+            cost = self.calculate_cost()
 
             derivatives = self.backward(X, Y, store)
 
@@ -153,7 +156,7 @@ if __name__ == '__main__':
 
     layers_dims = [196, 98, 49, 1]
 
-    ann = ANN(layers_dims,lambda_value=0)
+    ann = ANN(layers_dims, lambda_value=0)
     ann.fit(train_x, train_y, learning_rate=0.1, n_iterations=3000)
     print("Train Accuracy:", ann.predict(train_x, train_y))
     print("Test Accuracy:", ann.predict(test_x, test_y))
