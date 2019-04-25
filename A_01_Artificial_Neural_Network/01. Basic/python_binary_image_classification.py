@@ -3,6 +3,7 @@ import datasets.mnist.loader as mnist
 import matplotlib.pylab as plt
 from A_01_Artificial_Neural_Network.util import get_binary_dataset
 
+
 class ANN:
     def __init__(self, layers_size):
         self.layers_size = layers_size
@@ -96,6 +97,7 @@ class ANN:
             if loop % 100 == 0:
                 print(cost)
                 self.costs.append(cost)
+                self.predict(X, Y)
 
     def predict(self, X, Y):
         A, cache = self.forward(X)
@@ -117,6 +119,7 @@ class ANN:
         plt.ylabel("cost")
         plt.show()
 
+
 def pre_process_data(train_x, test_x):
     # Normalize
     train_x = train_x / 255.
@@ -133,10 +136,10 @@ if __name__ == '__main__':
     print("train_x's shape: " + str(train_x.shape))
     print("test_x's shape: " + str(test_x.shape))
 
-    layers_dims = [392,196,98,1]
+    layers_dims = [50, 1]
 
     ann = ANN(layers_dims)
-    ann.fit(train_x, train_y, learning_rate=0.1, n_iterations=1000)
+    ann.fit(train_x, train_y, learning_rate=0.01, n_iterations=1000)
     ann.predict(train_x, train_y)
     ann.predict(test_x, test_y)
     ann.plot_cost()

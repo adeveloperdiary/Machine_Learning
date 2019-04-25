@@ -8,7 +8,7 @@ class ANN:
     def __init__(self, layers_size):
         self.layers_size = layers_size
         self.parameters = {}
-        self.L = len(self.layers_size) - 1
+        self.L = len(self.layers_size)
         self.n = 0
         self.costs = []
 
@@ -16,8 +16,8 @@ class ANN:
         return 1 / (1 + np.exp(-Z))
 
     def softmax(self, Z):
-        expZ = np.exp(Z)
-        return expZ / expZ.sum(axis=1, keepdims=True)
+        expZ = np.exp(Z - np.max(Z))
+        return expZ / expZ.sum(axis=0, keepdims=True)
 
     def initialize_parameters(self):
         np.random.seed(1)
@@ -57,11 +57,11 @@ class ANN:
         store["A0"] = X.T
 
         A = store["A" + str(self.L)]
-        dA = A-Y.T
+        dZ = A - Y.T
 
-        dW = dA.dot(store["Z" + str(self.L - 1)].T) / self.n
-        db = np.sum(dA, axis=1, keepdims=True) / self.n
-        dAPrev = store["W" + str(self.L)].T.dot(dA)
+        dW = dZ.dot(store["A" + str(self.L - 1)].T) / self.n
+        db = np.sum(dZ, axis=1, keepdims=True) / self.n
+        dAPrev = store["W" + str(self.L)].T.dot(dZ)
 
         derivatives["dW" + str(self.L)] = dW
         derivatives["db" + str(self.L)] = db
@@ -82,6 +82,9 @@ class ANN:
         np.random.seed(1)
 
         self.n = X.shape[0]
+
+        self.layers_size.insert(0, X.shape[1])
+
         self.initialize_parameters()
         for loop in range(n_iterations):
             A, store = self.forward(X)
@@ -96,20 +99,17 @@ class ANN:
 
             if loop % 100 == 0:
                 print(cost)
+                #self.predict(X, Y)
+
+            if loop % 10 == 0:
                 self.costs.append(cost)
 
     def predict(self, X, Y):
         A, cache = self.forward(X)
-        n = X.shape[0]
-        p = np.zeros((1, n))
-
-        for i in range(0, A.shape[1]):
-            if A[0, i] > 0.5:
-                p[0, i] = 1
-            else:
-                p[0, i] = 0
-
-        print("Accuracy: " + str(np.sum((p == Y) / n)))
+        y_hat = np.argmax(A, axis=0)
+        Y = np.argmax(Y, axis=1)
+        accuracy = (y_hat == Y).mean()
+        print("Accuracy :", accuracy * 100)
 
     def plot_cost(self):
         plt.figure()
@@ -171,10 +171,10 @@ if __name__ == '__main__':
     print("train_x's shape: " + str(train_x.shape))
     print("test_x's shape: " + str(test_x.shape))
 
-    layers_dims = [784, 196, 2]
+    layers_dims = [196, 2]
 
     ann = ANN(layers_dims)
-    ann.fit(train_x, train_y, learning_rate=0.001, n_iterations=10000)
-    # ann.predict(train_x, train_y)
-    # ann.predict(test_x, test_y)
-    # ann.plot_cost()
+    ann.fit(train_x, train_y, learning_rate=0.1, n_iterations=1000)
+    ann.predict(train_x, train_y)
+    ann.predict(test_x, test_y)
+    ann.plot_cost()

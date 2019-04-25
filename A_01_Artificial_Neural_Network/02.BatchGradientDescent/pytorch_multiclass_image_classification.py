@@ -2,7 +2,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.utils.data as data
-from torch.autograd import Variable
 import datasets.mnist.loader as mnist
 import matplotlib.pyplot as plt
 import numpy as np
