@@ -2,9 +2,11 @@ from mnist import MNIST
 import numpy as np
 
 
-def get_data():
-    mndata = MNIST('../../datasets/mnist/data_files')
-    #mndata = MNIST('datasets/mnist/data_files')
+def get_data(ipython=False):
+    if not ipython:
+        mndata = MNIST('../../datasets/mnist/data_files')
+    else:
+        mndata = MNIST('datasets/mnist/data_files')
     mndata.gz = True
     images, labels = mndata.load_training()
     train_x = np.array(images)

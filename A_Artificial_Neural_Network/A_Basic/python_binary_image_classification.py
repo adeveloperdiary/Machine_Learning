@@ -1,7 +1,7 @@
 import numpy as np
 import datasets.mnist.loader as mnist
 import matplotlib.pylab as plt
-from A_01_Artificial_Neural_Network.util import get_binary_dataset
+from A_Artificial_Neural_Network.util import get_binary_dataset
 
 
 class ANN:

@@ -2,7 +2,7 @@ import numpy as np
 import datasets.mnist.loader as mnist
 import matplotlib.pylab as plt
 from sklearn.preprocessing import OneHotEncoder
-from A_01_Artificial_Neural_Network.util import get_binary_dataset
+from A_Artificial_Neural_Network.util import get_binary_dataset
 
 class ANN:
     def __init__(self, layers_size):

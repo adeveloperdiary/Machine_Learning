@@ -1,7 +1,7 @@
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
-from A_01_Artificial_Neural_Network.util import pre_process_data
+from A_Artificial_Neural_Network.util import pre_process_data
 import datasets.mnist.loader as mnist
 
 
