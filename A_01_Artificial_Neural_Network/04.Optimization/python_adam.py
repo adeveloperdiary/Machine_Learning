@@ -13,9 +13,11 @@ class ANN:
         self.L = len(self.layers_size)
         self.costs = []
         self.mini_batch_size = batch_size
-        self.velocity = {}
+        self.velocity_momentum = {}
+        self.velocity_rmsprop = {}
         self.learning_rate = learning_rate
-        self.beta = 0.999
+        self.beta_momentum = 0.9
+        self.beta_rmsprop = 0.999
 
     def sigmoid(self, Z):
         return 1 / (1 + np.exp(-Z))
@@ -35,9 +37,14 @@ class ANN:
                 self.layers_size[l - 1])
             self.parameters["b" + str(l)] = np.zeros((self.layers_size[l], 1))
 
-            self.velocity["dW" + str(l)] = np.zeros(
+            self.velocity_momentum["dW" + str(l)] = np.zeros(
                 [self.parameters["W" + str(l)].shape[0], self.parameters["W" + str(l)].shape[1]])
-            self.velocity["db" + str(l)] = np.zeros(
+            self.velocity_momentum["db" + str(l)] = np.zeros(
+                [self.parameters["b" + str(l)].shape[0], self.parameters["b" + str(l)].shape[1]])
+
+            self.velocity_rmsprop["dW" + str(l)] = np.zeros(
+                [self.parameters["W" + str(l)].shape[0], self.parameters["W" + str(l)].shape[1]])
+            self.velocity_rmsprop["db" + str(l)] = np.zeros(
                 [self.parameters["b" + str(l)].shape[0], self.parameters["b" + str(l)].shape[1]])
 
     def forward(self, X):
@@ -126,19 +133,32 @@ class ANN:
 
         return mini_batches
 
-    def minibatch_gd_using_rmsprop(self, derivatives):
+    def minibatch_gd_using_adam(self, derivatives, epoch):
+
+        velocity_momentum_corrected = {}
+        velocity_rmsprop_corrected = {}
+
         for l in range(1, self.L + 1):
-            self.velocity["dW" + str(l)] = self.beta * self.velocity["dW" + str(l)] + (1 - self.beta) * np.square(
+            self.velocity_momentum["dW" + str(l)] = self.beta_momentum * self.velocity_momentum["dW" + str(l)] + (1 - self.beta_momentum) * \
+                                                    derivatives["dW" + str(l)]
+            self.velocity_momentum["db" + str(l)] = self.beta_momentum * self.velocity_momentum["db" + str(l)] + (1 - self.beta_momentum) * \
+                                                    derivatives["db" + str(l)]
+
+            velocity_momentum_corrected["dW" + str(l)] = self.velocity_momentum["dW" + str(l)] / (1 - self.beta_momentum ** epoch)
+            velocity_momentum_corrected["db" + str(l)] = self.velocity_momentum["db" + str(l)] / (1 - self.beta_momentum ** epoch)
+
+            self.velocity_rmsprop["dW" + str(l)] = self.beta_rmsprop * self.velocity_rmsprop["dW" + str(l)] + (1 - self.beta_rmsprop) * np.square(
                 derivatives["dW" + str(l)])
-            self.velocity["db" + str(l)] = self.beta * self.velocity["db" + str(l)] + (1 - self.beta) * np.square(
+            self.velocity_rmsprop["db" + str(l)] = self.beta_rmsprop * self.velocity_rmsprop["db" + str(l)] + (1 - self.beta_rmsprop) * np.square(
                 derivatives["db" + str(l)])
 
+            velocity_rmsprop_corrected["dW" + str(l)] = self.velocity_rmsprop["dW" + str(l)] / (1 - self.beta_rmsprop ** epoch)
+            velocity_rmsprop_corrected["db" + str(l)] = self.velocity_rmsprop["db" + str(l)] / (1 - self.beta_rmsprop ** epoch)
+
             self.parameters["W" + str(l)] = self.parameters["W" + str(l)] - (
-                    self.learning_rate / (np.sqrt(self.velocity["dW" + str(l)]) + 1e-8)) * derivatives[
-                                                "dW" + str(l)]
+                    self.learning_rate / (np.sqrt(velocity_rmsprop_corrected["dW" + str(l)]) + 1e-8)) * velocity_momentum_corrected["dW" + str(l)]
             self.parameters["b" + str(l)] = self.parameters["b" + str(l)] - (
-                    self.learning_rate / (np.sqrt(self.velocity["db" + str(l)]) + 1e-8)) * derivatives[
-                                                "db" + str(l)]
+                    self.learning_rate / (np.sqrt(velocity_rmsprop_corrected["db" + str(l)]) + 1e-8)) * velocity_momentum_corrected["db" + str(l)]
 
     def fit(self, X, Y, n_iterations=2500):
         np.random.seed(1)
@@ -146,6 +166,8 @@ class ANN:
         self.layers_size.insert(0, X.shape[1])
 
         self.initialize_parameters()
+        t = 0
+
         for epoch in range(n_iterations):
 
             cost = 0.
@@ -160,8 +182,8 @@ class ANN:
                 A, store = self.forward(minibatch_X)
                 cost += -np.mean(minibatch_Y * np.log(A.T + 1e-8)) / num_batches
                 derivatives = self.backward(minibatch_X, minibatch_Y, store)
-
-                self.minibatch_gd_using_rmsprop(derivatives)
+                t += 1
+                self.minibatch_gd_using_adam(derivatives, t)
 
             if epoch % 100 == 0:
                 print("Cost: ", cost, "Train Accuracy:", self.predict(X, Y))
