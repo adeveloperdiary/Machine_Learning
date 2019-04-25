@@ -2,15 +2,16 @@ import numpy as np
 import datasets.mnist.loader as mnist
 import matplotlib.pylab as plt
 from sklearn.preprocessing import OneHotEncoder
+import math
 
 
 class ANN:
-    def __init__(self, layers_size):
+    def __init__(self, layers_size, batch_size=64):
         self.layers_size = layers_size
         self.parameters = {}
         self.L = len(self.layers_size)
-        self.n = 0
         self.costs = []
+        self.mini_batch_size = batch_size
 
     def sigmoid(self, Z):
         return 1 / (1 + np.exp(-Z))
@@ -36,7 +37,7 @@ class ANN:
         A = X.T
         for l in range(self.L - 1):
             Z = self.parameters["W" + str(l + 1)].dot(A) + self.parameters["b" + str(l + 1)]
-            A = self.sigmoid(Z)
+            A = self.relu(Z)
             store["A" + str(l + 1)] = A
             store["W" + str(l + 1)] = self.parameters["W" + str(l + 1)]
             store["Z" + str(l + 1)] = Z
@@ -62,23 +63,24 @@ class ANN:
     def backward(self, X, Y, store):
 
         derivatives = {}
+        n = X.shape[0]
 
         store["A0"] = X.T
 
         A = store["A" + str(self.L)]
         dZ = A - Y.T
 
-        dW = dZ.dot(store["A" + str(self.L - 1)].T) / self.n
-        db = np.sum(dZ, axis=1, keepdims=True) / self.n
+        dW = dZ.dot(store["A" + str(self.L - 1)].T) / n
+        db = np.sum(dZ, axis=1, keepdims=True) / n
         dAPrev = store["W" + str(self.L)].T.dot(dZ)
 
         derivatives["dW" + str(self.L)] = dW
         derivatives["db" + str(self.L)] = db
 
         for l in range(self.L - 1, 0, -1):
-            dZ = dAPrev * self.sigmoid_derivative(store["Z" + str(l)])
-            dW = 1. / self.n * dZ.dot(store["A" + str(l - 1)].T)
-            db = 1. / self.n * np.sum(dZ, axis=1, keepdims=True)
+            dZ = self.relu_derivative(dAPrev, store["Z" + str(l)])
+            dW = 1. / n * dZ.dot(store["A" + str(l - 1)].T)
+            db = 1. / n * np.sum(dZ, axis=1, keepdims=True)
             if l > 1:
                 dAPrev = store["W" + str(l)].T.dot(dZ)
 
@@ -87,33 +89,63 @@ class ANN:
 
         return derivatives
 
-    def get_mini_batches(self, X):
-        length = X.shape[0]
+    def get_mini_batches(self, X, Y, seed):
+        m = X.shape[0]  # number of training examples
+        mini_batches = []
+        np.random.seed(seed)
 
-        batches = []
+        # Step 1: Shuffle (X, Y)
+        permutation = list(np.random.permutation(m))
+        shuffled_X = X[permutation, :]
+        shuffled_Y = Y[permutation, :].reshape((m, Y.shape[1]))
+
+        # Step 2: Partition (shuffled_X, shuffled_Y). Minus the end case.
+        num_complete_minibatches = math.floor(
+            m / self.mini_batch_size)  # number of mini batches of size mini_batch_size in your partitionning
+        for k in range(0, num_complete_minibatches):
+            mini_batch_X = shuffled_X[k * self.mini_batch_size: k * self.mini_batch_size + self.mini_batch_size, :]
+            mini_batch_Y = shuffled_Y[k * self.mini_batch_size: k * self.mini_batch_size + self.mini_batch_size, :]
+            mini_batch = (mini_batch_X, mini_batch_Y)
+            mini_batches.append(mini_batch)
+
+        # Handling the end case (last mini-batch < mini_batch_size)
+        if m % self.mini_batch_size != 0:
+            mini_batch_X = shuffled_X[num_complete_minibatches * self.mini_batch_size: m, :]
+            mini_batch_Y = shuffled_Y[num_complete_minibatches * self.mini_batch_size: m, :]
+            mini_batch = (mini_batch_X, mini_batch_Y)
+            mini_batches.append(mini_batch)
+
+        return mini_batches
 
     def fit(self, X, Y, learning_rate=0.01, n_iterations=2500):
         np.random.seed(1)
-
-        self.n = X.shape[0]
 
         self.layers_size.insert(0, X.shape[1])
 
         self.initialize_parameters()
         for epoch in range(n_iterations):
 
-            A, store = self.forward(X)
-            cost = -np.mean(Y * np.log(A.T))
-            derivatives = self.backward(X, Y, store)
+            cost = 0.
 
-            for l in range(1, self.L + 1):
-                self.parameters["W" + str(l)] = self.parameters["W" + str(l)] - learning_rate * derivatives[
-                    "dW" + str(l)]
-                self.parameters["b" + str(l)] = self.parameters["b" + str(l)] - learning_rate * derivatives[
-                    "db" + str(l)]
+            minibatches = self.get_mini_batches(X, Y, seed=epoch)
+
+            num_batches = len(minibatches)
+
+            for minibatch in minibatches:
+                (minibatch_X, minibatch_Y) = minibatch
+
+                A, store = self.forward(minibatch_X)
+                cost += -np.mean(minibatch_Y * np.log(A.T)) / num_batches
+                derivatives = self.backward(minibatch_X, minibatch_Y, store)
+
+                for l in range(1, self.L + 1):
+                    self.parameters["W" + str(l)] = self.parameters["W" + str(l)] - learning_rate * derivatives[
+                        "dW" + str(l)]
+                    self.parameters["b" + str(l)] = self.parameters["b" + str(l)] - learning_rate * derivatives[
+                        "db" + str(l)]
 
             if epoch % 100 == 0:
-                print(cost, self.predict(X, Y))
+                print("Cost: ", cost, "Train Accuracy:", self.predict(X, Y))
 
             if epoch % 10 == 0:
                 self.costs.append(cost)
@@ -178,8 +210,8 @@ def pre_process_data(train_x, train_y, test_x, test_y):
 
 
 if __name__ == '__main__':
-    train_x, train_y, test_x, test_y = mnist.get_data()
-    # train_x, train_y, test_x, test_y = get_binary_dataset()
+    # train_x, train_y, test_x, test_y = mnist.get_data()
+    train_x, train_y, test_x, test_y = get_binary_dataset()
 
     train_x, train_y, test_x, test_y = pre_process_data(train_x, train_y, test_x, test_y)
 
@@ -189,7 +221,7 @@ if __name__ == '__main__':
     layers_dims = [196, 2]
 
     ann = ANN(layers_dims)
-    ann.fit(train_x, train_y, learning_rate=0.1, n_iterations=1000)
-    ann.predict(train_x, train_y)
-    ann.predict(test_x, test_y)
+    ann.fit(train_x, train_y, learning_rate=0.001, n_iterations=1000)
+    print("Train Accuracy:", ann.predict(train_x, train_y))
+    print("Test Accuracy:", ann.predict(test_x, test_y))
     ann.plot_cost()
