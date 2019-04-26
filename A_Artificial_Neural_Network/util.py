@@ -3,8 +3,8 @@ import datasets.mnist.loader as mnist
 from sklearn.preprocessing import OneHotEncoder
 
 
-def get_binary_dataset():
-    train_x_orig, train_y_orig, test_x_orig, test_y_orig = mnist.get_data()
+def get_binary_dataset(ipython=False):
+    train_x_orig, train_y_orig, test_x_orig, test_y_orig = mnist.get_data(ipython)
 
     index_5 = np.where(train_y_orig == 5)
     index_8 = np.where(train_y_orig == 8)
