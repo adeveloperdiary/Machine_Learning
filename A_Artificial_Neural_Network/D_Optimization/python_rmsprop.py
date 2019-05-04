@@ -198,15 +198,15 @@ def pre_process_data(train_x, train_y, test_x, test_y):
 
 
 if __name__ == '__main__':
-    train_x, train_y, test_x, test_y = mnist.get_data()
-    # train_x, train_y, test_x, test_y = get_binary_dataset()
+    #train_x, train_y, test_x, test_y = mnist.get_data()
+    train_x, train_y, test_x, test_y = get_binary_dataset()
 
     train_x, train_y, test_x, test_y = pre_process_data(train_x, train_y, test_x, test_y)
 
     print("train_x's shape: " + str(train_x.shape))
     print("test_x's shape: " + str(test_x.shape))
 
-    layers_dims = [50, 10]
+    layers_dims = [50, 2]
 
     ann = ANN(layers_dims, batch_size=64, learning_rate=0.001)
     ann.fit(train_x, train_y, n_iterations=500)

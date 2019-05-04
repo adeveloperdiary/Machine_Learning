@@ -126,8 +126,8 @@ class ANN:
 
     def minibatch_gd_using_momentum(self, derivatives):
         for l in range(1, self.L + 1):
-            self.velocity["dW" + str(l)] = self.beta * self.velocity["dW" + str(l)] + (1 - self.beta) * derivatives["dW" + str(l)]
-            self.velocity["db" + str(l)] = self.beta * self.velocity["db" + str(l)] + (1 - self.beta) * derivatives["db" + str(l)]
+            self.velocity["dW" + str(l)] = self.beta * self.velocity["dW" + str(l)] + (1 - self.beta +0.2) * derivatives["dW" + str(l)]
+            self.velocity["db" + str(l)] = self.beta * self.velocity["db" + str(l)] + (1 - self.beta +0.2) * derivatives["db" + str(l)]
 
             self.parameters["W" + str(l)] = self.parameters["W" + str(l)] - self.learning_rate * self.velocity["dW" + str(l)]
             self.parameters["b" + str(l)] = self.parameters["b" + str(l)] - self.learning_rate * self.velocity["db" + str(l)]
@@ -150,7 +150,7 @@ class ANN:
                 (minibatch_X, minibatch_Y) = minibatch
 
                 A, store = self.forward(minibatch_X)
-                cost += -np.mean(minibatch_Y * np.log(A.T)) / num_batches
+                cost += -np.mean(minibatch_Y * np.log(A.T+1e-8)) / num_batches
                 derivatives = self.backward(minibatch_X, minibatch_Y, store)
 
                 self.minibatch_gd_using_momentum(derivatives)
@@ -190,18 +190,18 @@ def pre_process_data(train_x, train_y, test_x, test_y):
 
 
 if __name__ == '__main__':
-    train_x, train_y, test_x, test_y = mnist.get_data()
-    # train_x, train_y, test_x, test_y = get_binary_dataset()
+    #train_x, train_y, test_x, test_y = mnist.get_data()
+    train_x, train_y, test_x, test_y = get_binary_dataset()
 
     train_x, train_y, test_x, test_y = pre_process_data(train_x, train_y, test_x, test_y)
 
     print("train_x's shape: " + str(train_x.shape))
     print("test_x's shape: " + str(test_x.shape))
 
-    layers_dims = [50, 10]
+    layers_dims = [64, 2]
 
     ann = ANN(layers_dims, batch_size=64, learning_rate=0.01)
-    ann.fit(train_x, train_y, n_iterations=1000)
+    ann.fit(train_x, train_y, n_iterations=500)
     print("Train Accuracy:", ann.predict(train_x, train_y))
     print("Test Accuracy:", ann.predict(test_x, test_y))
     ann.plot_cost()

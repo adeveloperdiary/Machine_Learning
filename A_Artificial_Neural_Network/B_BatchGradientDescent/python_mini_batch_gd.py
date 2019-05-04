@@ -188,10 +188,10 @@ if __name__ == '__main__':
     print("train_x's shape: " + str(train_x.shape))
     print("test_x's shape: " + str(test_x.shape))
 
-    layers_dims = [196, 2]
+    layers_dims = [50, 2]
 
     ann = ANN(layers_dims)
-    ann.fit(train_x, train_y, learning_rate=0.001, n_iterations=1000)
+    ann.fit(train_x, train_y, learning_rate=0.01, n_iterations=500)
     print("Train Accuracy:", ann.predict(train_x, train_y))
     print("Test Accuracy:", ann.predict(test_x, test_y))
     ann.plot_cost()

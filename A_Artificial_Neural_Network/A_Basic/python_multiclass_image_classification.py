@@ -94,7 +94,7 @@ class ANN:
         for loop in range(n_iterations):
 
             A, store = self.forward(X)
-            cost = -np.mean(Y * np.log(A.T + 0.000001))
+            cost = -np.mean(Y * np.log(A.T + 1e-8))
             derivatives = self.backward(X, Y, store)
 
             for l in range(1, self.L + 1):
@@ -149,7 +149,7 @@ if __name__ == '__main__':
     layers_dims = [196, 2]
 
     ann = ANN(layers_dims)
-    ann.fit(train_x, train_y, learning_rate=0.001, n_iterations=1000)
+    ann.fit(train_x, train_y, learning_rate=0.01, n_iterations=500)
     print("Train Accuracy:", ann.predict(train_x, train_y))
     print("Test Accuracy:", ann.predict(test_x, test_y))
     ann.plot_cost()
