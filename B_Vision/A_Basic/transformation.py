@@ -24,6 +24,7 @@ cv2.imshow("Resized", shifted)
 fliped = cv2.flip(image, 1)
 cv2.imshow("Flipped", fliped)
 
+# adding to all the channels
 M = np.ones(image.shape, dtype="uint8") * 100
 added = cv2.add(image, M)
 cv2.imshow("Added", added)
