@@ -25,7 +25,7 @@ for image in digits:
 
     data.append(hist)
 
-model = LinearSVC(random_state=42)
+model = LinearSVC(random_state=42,max_iter=2000)
 model.fit(data, target)
 
 joblib.dump(model, args["model"])
