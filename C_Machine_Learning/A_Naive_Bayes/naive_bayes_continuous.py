@@ -79,11 +79,18 @@ if __name__ == '__main__':
     y = le.fit_transform(iris["species"])
     X = iris.drop(["species"], axis=1).values
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1)
+    train_accuracy = np.zeros([100])
+    test_accuracy = np.zeros([100])
 
-    model = NaiveBayes()
-    model.fit(X_train, y_train)
-    prediction = model.predict(X_train)
-    output_log("Train Accuracy {}%".format(model.accuracy(y_train, prediction)))
-    prediction = model.predict(X_test)
-    output_log("Test Accuracy {}%".format(model.accuracy(y_test, prediction)))
+    for loop in range(100):
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=loop)
+
+        model = NaiveBayes()
+        model.fit(X_train, y_train)
+        prediction = model.predict(X_train)
+        train_accuracy[loop] = model.accuracy(y_train, prediction)
+        prediction = model.predict(X_test)
+        test_accuracy[loop] = model.accuracy(y_test, prediction)
+
+    output_log("Average Train Accuracy {}%".format(np.mean(train_accuracy)))
+    output_log("Average Test Accuracy {}%".format(np.mean(train_accuracy)))
