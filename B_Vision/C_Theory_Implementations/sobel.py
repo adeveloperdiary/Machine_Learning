@@ -20,10 +20,14 @@ def sobel_edge_detection(image, filter, verbose=False):
 
     gradient_direction = np.rad2deg(np.arctan(new_image2 / (new_image1 + 1e-8)))
 
+    '''
     if verbose:
         plt.imshow(gradient_direction)
         plt.title("Output Image")
         plt.show()
+    '''
+
+    return (gradient_magnitude, gradient_direction)
 
 
 if __name__ == '__main__':
@@ -35,4 +39,4 @@ if __name__ == '__main__':
 
     image = cv2.imread(args["image"])
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-    sobel_edge_detection(image, filter, False)
+    sobel_edge_detection(image, filter, True)
