@@ -1,0 +1,1133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/B_Vision/A_Basic/update.py" description="image[0:100, 0:100] = (0, 255, 0)" line="21" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dbb3af04-42fc-4536-98a8-62006eb30575" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/B_Vision/C_Theory_Implementations/canny.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1994">
+              <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/B_Vision/C_Theory_Implementations/convolution.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="12" column="54" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="54" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/B_Vision/C_Theory_Implementations/sobel.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="12" column="39" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="57" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Logging/Logging.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/B_Vision/C_Theory_Implementations/gaussian_blur.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="816">
+              <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jupyter Notebook" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>nose</find>
+      <find>relu_derivative</find>
+      <find>self.n</find>
+      <find>learning</find>
+      <find>minibatch_gd_using_momentum</find>
+      <find>predic</find>
+      <find>fd</find>
+      <find>data_folder</find>
+      <find>image</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/A_01_Artificial_Neural_Network/02.BatchGradientDescent/pytorch_multiclass_image_classification.py" />
+        <option value="$PROJECT_DIR$/A_01_Artificial_Neural_Network/01. Basic/test_class.py" />
+        <option value="$PROJECT_DIR$/A_01_Artificial_Neural_Network/01. Basic/python_binary_image_classification.py" />
+        <option value="$PROJECT_DIR$/A_01_Artificial_Neural_Network/01. Basic/sample.py" />
+        <option value="$PROJECT_DIR$/ANN/ANN_Scratch.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/A_01_Artificial_Neural_Network/03.Regularization/python_dropout.py" />
+        <option value="$PROJECT_DIR$/A_01_Artificial_Neural_Network/01. Basic/python_multiclass_image_classification.py" />
+        <option value="$PROJECT_DIR$/A_01_Artificial_Neural_Network/02.BatchGradientDescent/python_mini_batch_gd.py" />
+        <option value="$PROJECT_DIR$/A_01_Artificial_Neural_Network/util.py" />
+        <option value="$PROJECT_DIR$/A_01_Artificial_Neural_Network/03.Regularization/python_ann_l2_regularization.py" />
+        <option value="$PROJECT_DIR$/A_01_Artificial_Neural_Network/04.Optimization/python_momentum.py" />
+        <option value="$PROJECT_DIR$/A_01_Artificial_Neural_Network/04.Optimization/python_rmsprop.py" />
+        <option value="$PROJECT_DIR$/A_Artificial_Neural_Network/A_Basic/python_multiclass_image_classification.py" />
+        <option value="$PROJECT_DIR$/A_Artificial_Neural_Network/B_BatchGradientDescent/python_mini_batch_gd.py" />
+        <option value="$PROJECT_DIR$/A_Artificial_Neural_Network/D_Optimization/python_rmsprop.py" />
+        <option value="$PROJECT_DIR$/A_Artificial_Neural_Network/D_Optimization/python_momentum.py" />
+        <option value="$PROJECT_DIR$/A_Artificial_Neural_Network/D_Optimization/python_compare.py" />
+        <option value="$PROJECT_DIR$/B_Visiom/A_Basic/loading_saving_image.py" />
+        <option value="$PROJECT_DIR$/B_Vision/A_Basic/loading_saving_image.py" />
+        <option value="$PROJECT_DIR$/B_Vision/A_Basic/test.ipynb" />
+        <option value="$PROJECT_DIR$/B_Vision/A_Basic/update.py" />
+        <option value="$PROJECT_DIR$/B_Vision/A_Basic/drawing.py" />
+        <option value="$PROJECT_DIR$/B_Vision/utils/__init__.py" />
+        <option value="$PROJECT_DIR$/B_Vision/A_Basic/transformation.py" />
+        <option value="$PROJECT_DIR$/B_Vision/A_Basic/masking.py" />
+        <option value="$PROJECT_DIR$/B_Vision/A_Basic/channel.py" />
+        <option value="$PROJECT_DIR$/B_Vision/A_Basic/histogram.py" />
+        <option value="$PROJECT_DIR$/B_Vision/A_Basic/smoothing.py" />
+        <option value="$PROJECT_DIR$/B_Vision/utils/imutils.py" />
+        <option value="$PROJECT_DIR$/B_Vision/A_Basic/edge.py" />
+        <option value="$PROJECT_DIR$/B_Vision/B_Simple_Projects/face_detection_opencv.py" />
+        <option value="$PROJECT_DIR$/B_Vision/B_Simple_Projects/Face_Detection/main.py" />
+        <option value="$PROJECT_DIR$/B_Vision/B_Simple_Projects/Face_Detection/face_opencv.py" />
+        <option value="$PROJECT_DIR$/B_Vision/B_Simple_Projects/Face_Detection/face_main.py" />
+        <option value="$PROJECT_DIR$/B_Vision/B_Simple_Projects/Handwriting/handwriting_main.py" />
+        <option value="$PROJECT_DIR$/B_Vision/B_Simple_Projects/Handwriting/hog.py" />
+        <option value="$PROJECT_DIR$/B_Vision/B_Simple_Projects/Handwriting/data_loader.py" />
+        <option value="$PROJECT_DIR$/B_Vision/B_Simple_Projects/Handwriting/handwriting_train.py" />
+        <option value="$PROJECT_DIR$/B_Vision/B_Simple_Projects/Handwriting/handwriting_test.py" />
+        <option value="$PROJECT_DIR$/Clustering/kmeans.py" />
+        <option value="$PROJECT_DIR$/C_Machine_Learning/A_Naive_Bayes/naive_bayes_continuous.py" />
+        <option value="$PROJECT_DIR$/C_Machine_Learning/B_Vector_Quantization/vector_quantization.py" />
+        <option value="$PROJECT_DIR$/Logging/Logging.py" />
+        <option value="$PROJECT_DIR$/B_Vision/C_Theory_Implementations/convolution.py" />
+        <option value="$PROJECT_DIR$/B_Vision/C_Theory_Implementations/gaussian_blur.py" />
+        <option value="$PROJECT_DIR$/B_Vision/C_Theory_Implementations/sobel.py" />
+        <option value="$PROJECT_DIR$/B_Vision/C_Theory_Implementations/canny.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="2560" />
+    <option name="height" value="1417" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Machine_Learning_GitHub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Machine_Learning_GitHub" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Machine_Learning_GitHub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Machine_Learning_GitHub" type="462c0819:PsiDirectoryNode" />
+              <item name="B_Vision" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Machine_Learning_GitHub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Machine_Learning_GitHub" type="462c0819:PsiDirectoryNode" />
+              <item name="B_Vision" type="462c0819:PsiDirectoryNode" />
+              <item name="C_Theory_Implementations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Machine_Learning_GitHub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Machine_Learning_GitHub" type="462c0819:PsiDirectoryNode" />
+              <item name="B_Vision" type="462c0819:PsiDirectoryNode" />
+              <item name="C_Theory_Implementations" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Machine_Learning_GitHub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Machine_Learning_GitHub" type="462c0819:PsiDirectoryNode" />
+              <item name="C_Machine_Learning" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Machine_Learning_GitHub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Machine_Learning_GitHub" type="462c0819:PsiDirectoryNode" />
+              <item name="Clustering" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/B_Vision/C_Theory_Implementations/images" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/B_Vision/C_Theory_Implementations/images" />
+      <recent name="$PROJECT_DIR$/B_Vision/B_Simple_Projects/Handwriting/data" />
+      <recent name="$PROJECT_DIR$/B_Vision/B_Simple_Projects/Face_Detection" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/B_Vision/C_Theory_Implementations/images" />
+      <recent name="$PROJECT_DIR$/C_Machine_Learning/B_Vector_Quantization" />
+      <recent name="$PROJECT_DIR$/B_Vision/B_Simple_Projects/Object_Matching" />
+      <recent name="$PROJECT_DIR$/B_Vision/B_Simple_Projects/image_classification" />
+      <recent name="$PROJECT_DIR$/B_Vision/B_Simple_Projects/Handwriting" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.canny">
+    <configuration name="canny" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Machine_Learning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/B_Vision/C_Theory_Implementations" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/B_Vision/C_Theory_Implementations/canny.py" />
+      <option name="PARAMETERS" value="-i images/spider.jpeg -v True" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="edge" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Machine_Learning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/Library/Frameworks/Python.framework/Versions/3.7/bin/python3" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/B_Vision/A_Basic" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/B_Vision/A_Basic/edge.py" />
+      <option name="PARAMETERS" value="-i ../images/coins.png" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="gaussian_blur" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Machine_Learning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/B_Vision/C_Theory_Implementations" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/B_Vision/C_Theory_Implementations/gaussian_blur.py" />
+      <option name="PARAMETERS" value="-i images/img01.jpg" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="histogram" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Machine_Learning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/Library/Frameworks/Python.framework/Versions/3.7/bin/python3" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/B_Vision/A_Basic" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/B_Vision/A_Basic/histogram.py" />
+      <option name="PARAMETERS" value="-i ../images/red.jpg" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="naive_bayes_continuous" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Machine_Learning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/C_Machine_Learning/A_Naive_Bayes" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/C_Machine_Learning/A_Naive_Bayes/naive_bayes_continuous.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="smoothing" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Machine_Learning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/Library/Frameworks/Python.framework/Versions/3.7/bin/python3" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/B_Vision/A_Basic" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/B_Vision/A_Basic/smoothing.py" />
+      <option name="PARAMETERS" value="-i ../images/TRex.jpg" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="sobel" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Machine_Learning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/B_Vision/C_Theory_Implementations" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/B_Vision/C_Theory_Implementations/sobel.py" />
+      <option name="PARAMETERS" value="-i images/img01.jpg" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="vector_quantization" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Machine_Learning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/C_Machine_Learning/B_Vector_Quantization" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/C_Machine_Learning/B_Vector_Quantization/vector_quantization.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.histogram" />
+      <item itemvalue="Python.smoothing" />
+      <item itemvalue="Python.edge" />
+      <item itemvalue="Python.sobel" />
+      <item itemvalue="Python.naive_bayes_continuous" />
+      <item itemvalue="Python.vector_quantization" />
+      <item itemvalue="Python.gaussian_blur" />
+      <item itemvalue="Python.canny" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.canny" />
+        <item itemvalue="Python.sobel" />
+        <item itemvalue="Python.gaussian_blur" />
+        <item itemvalue="Python.vector_quantization" />
+        <item itemvalue="Python.naive_bayes_continuous" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dbb3af04-42fc-4536-98a8-62006eb30575" name="Default Changelist" comment="" />
+      <created>1555989699560</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1555989699560</updated>
+      <workItem from="1555989701042" duration="1428000" />
+      <workItem from="1555994204975" duration="1025000" />
+      <workItem from="1556035612316" duration="9283000" />
+      <workItem from="1556149424268" duration="2510000" />
+      <workItem from="1556155261980" duration="13028000" />
+      <workItem from="1556181519674" duration="3920000" />
+      <workItem from="1556237534433" duration="1211000" />
+      <workItem from="1556421754115" duration="220000" />
+      <workItem from="1556513520681" duration="1278000" />
+      <workItem from="1556594095126" duration="5000000" />
+      <workItem from="1556732665798" duration="3579000" />
+      <workItem from="1556756770248" duration="211000" />
+      <workItem from="1556915700821" duration="2479000" />
+      <workItem from="1556937460659" duration="3049000" />
+      <workItem from="1556944774542" duration="4158000" />
+      <workItem from="1556986904356" duration="12209000" />
+      <workItem from="1557082439011" duration="14941000" />
+      <workItem from="1557175627040" duration="7009000" />
+      <workItem from="1557358238857" duration="10000" />
+      <workItem from="1557362447709" duration="9941000" />
+      <workItem from="1557417214418" duration="55000" />
+      <workItem from="1557949032142" duration="8203000" />
+      <workItem from="1557971299161" duration="142000" />
+      <workItem from="1557971480273" duration="2019000" />
+      <workItem from="1558038611523" duration="386000" />
+      <workItem from="1558047235392" duration="2257000" />
+      <workItem from="1558062085728" duration="5444000" />
+      <workItem from="1558070501381" duration="196000" />
+      <workItem from="1558070709134" duration="6143000" />
+      <workItem from="1558079553413" duration="485000" />
+    </task>
+    <task id="LOCAL-00001" summary="softmax">
+      <created>1556155078221</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1556155078221</updated>
+    </task>
+    <task id="LOCAL-00002" summary="softmax">
+      <created>1556161088747</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1556161088747</updated>
+    </task>
+    <task id="LOCAL-00003" summary="mini_batch">
+      <created>1556166135812</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1556166135812</updated>
+    </task>
+    <task id="LOCAL-00004" summary="mini_batch">
+      <created>1556172436766</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1556172436766</updated>
+    </task>
+    <task id="LOCAL-00005" summary="mini_batch">
+      <created>1556172523795</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1556172523795</updated>
+    </task>
+    <task id="LOCAL-00006" summary="momentum">
+      <created>1556185669781</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1556185669781</updated>
+    </task>
+    <task id="LOCAL-00007" summary="vision">
+      <created>1557004371367</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1557004371367</updated>
+    </task>
+    <task id="LOCAL-00008" summary="vision">
+      <created>1557101827491</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1557101827491</updated>
+    </task>
+    <task id="LOCAL-00009" summary="vision">
+      <created>1557103461295</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1557103461295</updated>
+    </task>
+    <task id="LOCAL-00010" summary="vision">
+      <created>1557176641047</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1557176641047</updated>
+    </task>
+    <task id="LOCAL-00011" summary="vision">
+      <created>1557197204711</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1557197204711</updated>
+    </task>
+    <task id="LOCAL-00012" summary="vision">
+      <created>1557203038414</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1557203038414</updated>
+    </task>
+    <task id="LOCAL-00013" summary="kmeans">
+      <created>1557362881135</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1557362881135</updated>
+    </task>
+    <task id="LOCAL-00014" summary="sobel">
+      <created>1557366361146</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1557366361147</updated>
+    </task>
+    <task id="LOCAL-00015" summary="sobel">
+      <created>1557382674729</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1557382674729</updated>
+    </task>
+    <task id="LOCAL-00016" summary="NaiveBayes">
+      <created>1557963921834</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1557963921834</updated>
+    </task>
+    <task id="LOCAL-00017" summary="vector quantization">
+      <created>1557984638249</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1557984638249</updated>
+    </task>
+    <task id="LOCAL-00018" summary="gaussian blur">
+      <created>1558050003260</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1558050003260</updated>
+    </task>
+    <task id="LOCAL-00019" summary="gaussian blur">
+      <created>1558064537643</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1558064537643</updated>
+    </task>
+    <task id="LOCAL-00020" summary="gaussian blur">
+      <created>1558068599348</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1558068599348</updated>
+    </task>
+    <task id="LOCAL-00021" summary="canny">
+      <created>1558079870429</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1558079870429</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Nosetests_in_test_class_py - 2019.04.23 at 13h 18m 44s.xml">
+      <configuration name="Nosetests in test_class.py" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="121819000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="2560" height="1417" extended-state="0" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49770433" visible="true" weight="0.12112788" />
+      <window_info id="Structure" order="1" sideWeight="0.5022957" side_tool="true" weight="0.12629071" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329927" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.11924528" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32981133" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.17207547" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.33433962" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.26490566" />
+      <window_info anchor="bottom" id="Jupyter" order="13" weight="0.32981133" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info active="true" anchor="right" id="SciView" order="3" visible="true" weight="0.26171565" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="R Graphics" order="5" />
+      <window_info anchor="right" id="R Packages" order="6" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="softmax" />
+    <MESSAGE value="mini_batch" />
+    <MESSAGE value="momentum" />
+    <MESSAGE value="vision" />
+    <MESSAGE value="kmeans" />
+    <MESSAGE value="sobel" />
+    <MESSAGE value="NaiveBayes" />
+    <MESSAGE value="vector quantization" />
+    <MESSAGE value="gaussian blur" />
+    <MESSAGE value="canny" />
+    <option name="LAST_COMMIT_MESSAGE" value="canny" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="A" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$gradient_descent.coverage" NAME="gradient_descent Coverage Results" MODIFIED="1557363037270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SVM" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$python_mini_batch_gd.coverage" NAME="python_mini_batch_gd Coverage Results" MODIFIED="1556596230033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/A_Artificial_Neural_Network/B_BatchGradientDescent" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$smoothing.coverage" NAME="smoothing Coverage Results" MODIFIED="1557034558617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/B_Vision/A_Basic" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$masking.coverage" NAME="masking Coverage Results" MODIFIED="1557006115918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/B_Vision/A_Basic" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$handwriting_test.coverage" NAME="handwriting_test Coverage Results" MODIFIED="1557200492230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/B_Vision/B_Simple_Projects/Handwriting" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$kmeans.coverage" NAME="kmeans Coverage Results" MODIFIED="1557362974087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Clustering" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$sobel.coverage" NAME="sobel Coverage Results" MODIFIED="1558070842510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/B_Vision/C_Theory_Implementations" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$histogram.coverage" NAME="histogram Coverage Results" MODIFIED="1557026631683" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/B_Vision/A_Basic" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$python_rmsprop__1_.coverage" NAME="python_rmsprop (1) Coverage Results" MODIFIED="1556603778580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/A_Artificial_Neural_Network/D_Optimization" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$transformation.coverage" NAME="transformation Coverage Results" MODIFIED="1557004219729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/B_Vision/A_Basic" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$Nosetests_in_test_class_py.coverage" NAME="Nosetests in test_class.py Coverage Results" MODIFIED="1556039924636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/A_01_Artificial_Neural_Network/01. Basic" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$main.coverage" NAME="face_main Coverage Results" MODIFIED="1557122666050" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/B_Vision/B_Simple_Projects/Face_Detection" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$update.coverage" NAME="update Coverage Results" MODIFIED="1556938832890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/B_Vision/A_Basic" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$python_ann_l2_regularization.coverage" NAME="python_ann_l2_regularization Coverage Results" MODIFIED="1556171771029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/A_01_Artificial_Neural_Network/03.Regularization" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$channel.coverage" NAME="channel Coverage Results" MODIFIED="1557025601463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/B_Vision/A_Basic" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$sample.coverage" NAME="sample Coverage Results" MODIFIED="1556049582206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/A_01_Artificial_Neural_Network/01. Basic" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$kernel_kmeans.coverage" NAME="kernel_kmeans Coverage Results" MODIFIED="1557362506097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Clustering" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$vector_quantization.coverage" NAME="vector_quantization Coverage Results" MODIFIED="1557984532474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/C_Machine_Learning/B_Vector_Quantization" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$python_momentum.coverage" NAME="python_momentum Coverage Results" MODIFIED="1556182885126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/A_01_Artificial_Neural_Network/04.Optimization" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$python_multiclass_image_classification.coverage" NAME="python_multiclass_image_classification Coverage Results" MODIFIED="1556160915140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/A_01_Artificial_Neural_Network/01. Basic" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$naive_bayes_continuous.coverage" NAME="naive_bayes_continuous Coverage Results" MODIFIED="1557968955532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/C_Machine_Learning/A_Naive_Bayes" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$gaussian_blur.coverage" NAME="gaussian_blur Coverage Results" MODIFIED="1558064909364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/B_Vision/C_Theory_Implementations" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$python_binary_image_classification.coverage" NAME="python_binary_image_classification Coverage Results" MODIFIED="1556045871148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/A_01_Artificial_Neural_Network/01. Basic" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$handwriting_train.coverage" NAME="handwriting_train Coverage Results" MODIFIED="1557198873396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/B_Vision/B_Simple_Projects/Handwriting" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$edge.coverage" NAME="edge Coverage Results" MODIFIED="1557101725572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/B_Vision/A_Basic" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$drawing.coverage" NAME="drawing Coverage Results" MODIFIED="1556939562275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/B_Vision/A_Basic" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$python_compare.coverage" NAME="python_compare Coverage Results" MODIFIED="1556736168547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/A_Artificial_Neural_Network/D_Optimization" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$canny.coverage" NAME="canny Coverage Results" MODIFIED="1558080015423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/B_Vision/C_Theory_Implementations" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$python_momentum__1_.coverage" NAME="python_momentum (1) Coverage Results" MODIFIED="1556733126215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/A_Artificial_Neural_Network/D_Optimization" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_GitHub$python_rmsprop.coverage" NAME="python_rmsprop Coverage Results" MODIFIED="1556184698813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/A_01_Artificial_Neural_Network/04.Optimization" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>padded_image[pad_height:padded_image.shape[0] - pad_height, pad_width:padded_image.shape[1] - pad_width]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>padded_image[pad_height-1:image_row+1, pad_width-1:image_col+1]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>padded_image[pad_height-1:image_row-1, pad_width-1:image_col-1]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>padded_image[pad_height:image_row , pad_width:image_col]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>kernel * padded_image[row - pad_height:row + pad_height + 1, col - pad_width:col + pad_width + 1]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>padded_image[row - pad_height:row + pad_height + 1, col - pad_width:col + pad_width + 1]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>row + pad_height + 1</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>row - pad_height</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>np.multiply(h_filter,padded_image[row - 1:row + 2, col - 1: col + 2])</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/B_Vision/utils/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="30" selection-start-column="30" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/images/Q.jpg" />
+    <entry file="file://$PROJECT_DIR$/B_Vision/images/T-Rex.png" />
+    <entry file="file://$PROJECT_DIR$/B_Vision/images/dark.jpg" />
+    <entry file="file://$PROJECT_DIR$/B_Vision/images/farm.jpg" />
+    <entry file="file://$PROJECT_DIR$/B_Vision/images/night.jpg" />
+    <entry file="file://$PROJECT_DIR$/B_Vision/images/cat.jpg" />
+    <entry file="file://$PROJECT_DIR$/B_Vision/images/coin.jpg" />
+    <entry file="file://$PROJECT_DIR$/B_Vision/A_Basic/update.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="9" column="29" selection-start-line="3" selection-end-line="9" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/A_Basic/histogram.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" selection-start-line="5" selection-end-line="12" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/B_Simple_Projects/Face_Detection/cascades/haarcascade_frontalface_default.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/B_Simple_Projects/Face_Detection/cascades/haarcascade_eye.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/B_Simple_Projects/Face_Detection/images/obama.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/B_Simple_Projects/Face_Detection/images/boy.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/A_Basic/drawing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/A_Basic/masking.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="21" column="33" selection-start-line="21" selection-end-line="21" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/B_Simple_Projects/Handwriting/data/digits.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/utils/imutils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/B_Simple_Projects/Handwriting/data_loader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="610">
+          <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/B_Simple_Projects/Handwriting/images/apple_phonenumber.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/B_Simple_Projects/Handwriting/images/digit_sample.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/B_Simple_Projects/Handwriting/images/umbc_zipcode.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/B_Simple_Projects/Handwriting/images/cellphone.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/A_Basic/transformation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/B_Simple_Projects/Handwriting/handwriting_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="38" column="46" lean-forward="true" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/B_Simple_Projects/Handwriting/handwriting_train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/B_Simple_Projects/Handwriting/hog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/B_Simple_Projects/Face_Detection/face_opencv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/B_Simple_Projects/Face_Detection/face_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1230">
+          <caret line="73" column="62" selection-start-line="73" selection-start-column="51" selection-end-line="73" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/A_Basic/edge.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1176">
+          <caret line="52" column="12" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/A_Basic/smoothing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="11" selection-start-line="5" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/A_Basic/loading_saving_image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Clustering/kernel_kmeans.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1559">
+          <caret line="68" column="21" lean-forward="true" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SVM/gradient_descent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="53" lean-forward="true" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Clustering/kmeans.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/images/red.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/cv2/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/C_Machine_Learning/B_Vector_Quantization/HMP_Dataset/data/Brush_teeth/Accelerometer-2011-04-11-13-28-18-brush_teeth-f1.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/A_Artificial_Neural_Network/B_BatchGradientDescent/python_mini_batch_gd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/C_Machine_Learning/B_Vector_Quantization/vector_quantization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2712">
+          <caret line="116" column="28" selection-start-line="116" selection-start-column="28" selection-end-line="116" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LogisticRegression/NewtonRaphson.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LogisticRegression/GradientDescent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42168">
+          <caret line="1757" selection-start-line="1757" selection-end-line="1757" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2019.1/python_stubs/397241524/numpy/core/_multiarray_umath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="10836" selection-start-line="10836" selection-end-line="10837" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/C_Machine_Learning/A_Naive_Bayes/naive_bayes_continuous.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="42" column="58" lean-forward="true" selection-start-line="42" selection-start-column="58" selection-end-line="42" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/A_Basic/channel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/C_Theory_Implementations/canny.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1994">
+          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/C_Theory_Implementations/convolution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="54" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/C_Theory_Implementations/sobel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="39" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logging/Logging.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_Vision/C_Theory_Implementations/gaussian_blur.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
