@@ -3,9 +3,12 @@ import cv2
 import argparse
 import matplotlib.pyplot as plt
 from B_Vision.C_Theory_Implementations.convolution import convolution
+from Logging.Logging import info_log, error_log, warning_log, output_log
 
 
-def sobel_edge_detection(image, filter, verbose=False):
+def sobel_edge_detection(image, filter, convert_to_degree=False, verbose=False):
+    info_log("sobel_edge_detection()")
+
     new_image1 = convolution(image, filter, verbose)
     new_image2 = convolution(image, filter.T, verbose)
 
@@ -18,7 +21,12 @@ def sobel_edge_detection(image, filter, verbose=False):
         plt.title("Output Image")
         plt.show()
 
-    gradient_direction = np.rad2deg(np.arctan(new_image2 / (new_image1 + 1e-8)))
+    gradient_direction = np.arctan2(new_image2, new_image1)
+
+    if convert_to_degree:
+        gradient_direction = np.rad2deg(gradient_direction)
+
+    # print(np.min(gradient_direction), np.max(gradient_direction))
 
     '''
     if verbose:
@@ -27,7 +35,7 @@ def sobel_edge_detection(image, filter, verbose=False):
         plt.show()
     '''
 
-    return (gradient_magnitude, gradient_direction)
+    return gradient_magnitude, gradient_direction
 
 
 if __name__ == '__main__':

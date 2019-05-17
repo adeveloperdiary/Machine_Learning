@@ -6,6 +6,8 @@ import matplotlib.pyplot as plt
 
 
 def convolution(image, kernel, average=False, verbose=False):
+    info_log("convolution()")
+
     if len(image.shape) == 3:
         warning_log("Found 3 Channels : {}".format(image.shape))
         image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
