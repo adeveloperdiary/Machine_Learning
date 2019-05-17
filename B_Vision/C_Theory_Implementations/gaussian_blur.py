@@ -2,6 +2,8 @@ import numpy as np
 import cv2
 import argparse
 import matplotlib.pyplot as plt
+import math
+from B_Vision.C_Theory_Implementations.sobel import convolution
 
 
 def dnorm(x, mu, sd):
@@ -24,8 +26,9 @@ def gaussian_kernel(size, sigma=1, verbose=False):
     return kernel_2D
 
 
-def gaussian_blur(image, kernel, verbose=False):
-    pass
+def gaussian_blur(image, kernel_size, verbose=False):
+    kernel = gaussian_kernel(kernel_size, sigma=math.sqrt(kernel_size), verbose=verbose)
+    return convolution(image, kernel, average=True, verbose=verbose)
 
 
 if __name__ == '__main__':
@@ -37,3 +40,5 @@ if __name__ == '__main__':
 
     image = cv2.imread(args["image"])
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+    gaussian_blur(image, 5, verbose=True)
