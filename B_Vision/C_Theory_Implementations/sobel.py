@@ -10,7 +10,7 @@ def sobel_edge_detection(image, filter, convert_to_degree=False, verbose=False):
     info_log("sobel_edge_detection()")
 
     new_image1 = convolution(image, filter, verbose)
-    new_image2 = convolution(image, filter.T, verbose)
+    new_image2 = convolution(image, np.flip(filter.T, axis=0), verbose)
 
     gradient_magnitude = np.sqrt(np.square(new_image1) + np.square(new_image2))
 

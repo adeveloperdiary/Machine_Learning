@@ -1,6 +1,5 @@
 import numpy as np
 import cv2
-import argparse
 from Logging.Logging import info_log, error_log, warning_log, output_log
 import matplotlib.pyplot as plt
 

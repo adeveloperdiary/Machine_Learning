@@ -96,9 +96,9 @@ if __name__ == '__main__':
 
     image = cv2.imread(args["image"])
 
-    blurred_image = gaussian_blur(image, kernel_size=5, verbose=True)
+    blurred_image = gaussian_blur(image, kernel_size=5, verbose=False)
 
-    edge_filter = np.array([[1, 2, 1], [0, 0, 0], [-1, -2, -1]]).T
+    edge_filter = np.array([[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]], np.float32)
 
     gradient_magnitude, gradient_direction = sobel_edge_detection(blurred_image, edge_filter, convert_to_degree=True, verbose=args["verbose"])
 
@@ -106,7 +106,7 @@ if __name__ == '__main__':
 
     weak = 50
 
-    new_image = threshold(new_image, 2, 20, weak=weak, verbose=args["verbose"])
+    new_image = threshold(new_image, 10, 30, weak=weak, verbose=args["verbose"])
 
     new_image = hysteresis(new_image, weak)
 
@@ -115,7 +115,7 @@ if __name__ == '__main__':
     plt.show()
 
     image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    new_image = cv2.Canny(image, 100, 220)
+    new_image = cv2.Canny(image, 150, 220)
     plt.imshow(new_image, cmap='gray')
     plt.title("Canny Edge Detector - cv2")
     plt.show()

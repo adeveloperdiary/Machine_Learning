@@ -22,7 +22,7 @@ def gaussian_kernel(size, sigma=1, verbose=False):
     kernel_2D *= 1.0 / kernel_2D.max()
 
     if verbose:
-        plt.imshow(kernel_2D, interpolation='none')
+        plt.imshow(kernel_2D, interpolation='none', cmap='gray')
         plt.title("Image")
         plt.show()
 
@@ -36,13 +36,10 @@ def gaussian_blur(image, kernel_size, verbose=False):
 
 
 if __name__ == '__main__':
-    filter = np.array([[1, 2, 1], [0, 0, 0], [-1, -2, -1]])
-
     ap = argparse.ArgumentParser()
     ap.add_argument("-i", "--image", required=True, help="Path to the image")
     args = vars(ap.parse_args())
 
     image = cv2.imread(args["image"])
-    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
-    gaussian_blur(image, 5, verbose=True)
+    gaussian_blur(image, 9, verbose=True)
