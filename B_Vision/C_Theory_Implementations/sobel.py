@@ -37,6 +37,7 @@ def sobel_edge_detection(image, filter, convert_to_degree=False, verbose=False):
 
     if convert_to_degree:
         gradient_direction = np.rad2deg(gradient_direction)
+        gradient_direction += 180
 
     return gradient_magnitude, gradient_direction
 

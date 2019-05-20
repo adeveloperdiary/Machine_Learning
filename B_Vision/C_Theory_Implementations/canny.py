@@ -13,8 +13,6 @@ def non_max_suppression(gradient_magnitude, gradient_direction, verbose):
 
     image_row, image_col = gradient_magnitude.shape
 
-    gradient_direction += 180
-
     output = np.zeros(gradient_magnitude.shape)
 
     PI = 180
@@ -76,16 +74,63 @@ def hysteresis(image, weak):
     info_log("hysteresis")
     image_row, image_col = image.shape
 
-    for row in range(1, image_row - 1):
-        for col in range(1, image_col - 1):
-            if image[row, col] == weak:
-                if image[row, col + 1] == 255 or image[row, col - 1] == 255 or image[row - 1, col] == 255 or image[row + 1, col] == 255 or image[
-                    row - 1, col - 1] == 255 or image[row + 1, col - 1] == 255 or image[row - 1, col + 1] == 255 or image[row + 1, col + 1] == 255:
-                    image[row, col] = 255
-                else:
-                    image[row, col] = 0
+    top_to_bottom = image.copy()
 
-    return image
+    for row in range(1, image_row):
+        for col in range(1, image_col):
+            if top_to_bottom[row, col] == weak:
+                if top_to_bottom[row, col + 1] == 255 or top_to_bottom[row, col - 1] == 255 or top_to_bottom[row - 1, col] == 255 or top_to_bottom[
+                    row + 1, col] == 255 or top_to_bottom[
+                    row - 1, col - 1] == 255 or top_to_bottom[row + 1, col - 1] == 255 or top_to_bottom[row - 1, col + 1] == 255 or top_to_bottom[
+                    row + 1, col + 1] == 255:
+                    top_to_bottom[row, col] = 255
+                else:
+                    top_to_bottom[row, col] = 0
+
+    bottom_to_top = image.copy()
+
+    for row in range(image_row - 1, 0, -1):
+        for col in range(image_col - 1, 0, -1):
+            if bottom_to_top[row, col] == weak:
+                if bottom_to_top[row, col + 1] == 255 or bottom_to_top[row, col - 1] == 255 or bottom_to_top[row - 1, col] == 255 or bottom_to_top[
+                    row + 1, col] == 255 or bottom_to_top[
+                    row - 1, col - 1] == 255 or bottom_to_top[row + 1, col - 1] == 255 or bottom_to_top[row - 1, col + 1] == 255 or bottom_to_top[
+                    row + 1, col + 1] == 255:
+                    bottom_to_top[row, col] = 255
+                else:
+                    bottom_to_top[row, col] = 0
+
+    right_to_left = image.copy()
+
+    for row in range(1, image_row):
+        for col in range(image_col - 1, 0, -1):
+            if right_to_left[row, col] == weak:
+                if right_to_left[row, col + 1] == 255 or right_to_left[row, col - 1] == 255 or right_to_left[row - 1, col] == 255 or right_to_left[
+                    row + 1, col] == 255 or right_to_left[
+                    row - 1, col - 1] == 255 or right_to_left[row + 1, col - 1] == 255 or right_to_left[row - 1, col + 1] == 255 or right_to_left[
+                    row + 1, col + 1] == 255:
+                    right_to_left[row, col] = 255
+                else:
+                    right_to_left[row, col] = 0
+
+    left_to_right = image.copy()
+
+    for row in range(image_row - 1, 0, -1):
+        for col in range(1, image_col):
+            if left_to_right[row, col] == weak:
+                if left_to_right[row, col + 1] == 255 or left_to_right[row, col - 1] == 255 or left_to_right[row - 1, col] == 255 or left_to_right[
+                    row + 1, col] == 255 or left_to_right[
+                    row - 1, col - 1] == 255 or left_to_right[row + 1, col - 1] == 255 or left_to_right[row - 1, col + 1] == 255 or left_to_right[
+                    row + 1, col + 1] == 255:
+                    left_to_right[row, col] = 255
+                else:
+                    left_to_right[row, col] = 0
+
+    final_image = top_to_bottom + bottom_to_top + right_to_left + left_to_right
+
+    final_image[final_image > 255] = 255
+
+    return final_image
 
 
 if __name__ == '__main__':
@@ -106,7 +151,7 @@ if __name__ == '__main__':
 
     weak = 50
 
-    new_image = threshold(new_image, 10, 20, weak=weak, verbose=args["verbose"])
+    new_image = threshold(new_image, 5, 20, weak=weak, verbose=args["verbose"])
 
     new_image = hysteresis(new_image, weak)
 
@@ -115,7 +160,7 @@ if __name__ == '__main__':
     plt.show()
 
     image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    new_image = cv2.Canny(image, 150, 220)
+    new_image = cv2.Canny(image, 140, 220)
     plt.imshow(new_image, cmap='gray')
     plt.title("Canny Edge Detector - cv2")
     plt.show()
