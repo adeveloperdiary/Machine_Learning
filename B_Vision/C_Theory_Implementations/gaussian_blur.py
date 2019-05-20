@@ -3,7 +3,7 @@ import cv2
 import argparse
 import matplotlib.pyplot as plt
 import math
-from B_Vision.C_Theory_Implementations.sobel import convolution
+from B_Vision.C_Theory_Implementations.convolution import convolution
 from Logging.Logging import info_log, error_log, warning_log, output_log
 
 

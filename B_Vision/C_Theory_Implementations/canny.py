@@ -96,9 +96,9 @@ if __name__ == '__main__':
 
     image = cv2.imread(args["image"])
 
-    blurred_image = gaussian_blur(image, kernel_size=5, verbose=False)
+    blurred_image = gaussian_blur(image, kernel_size=9, verbose=False)
 
-    edge_filter = np.array([[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]], np.float32)
+    edge_filter = np.array([[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]])
 
     gradient_magnitude, gradient_direction = sobel_edge_detection(blurred_image, edge_filter, convert_to_degree=True, verbose=args["verbose"])
 
@@ -106,7 +106,7 @@ if __name__ == '__main__':
 
     weak = 50
 
-    new_image = threshold(new_image, 10, 30, weak=weak, verbose=args["verbose"])
+    new_image = threshold(new_image, 10, 20, weak=weak, verbose=args["verbose"])
 
     new_image = hysteresis(new_image, weak)
 
