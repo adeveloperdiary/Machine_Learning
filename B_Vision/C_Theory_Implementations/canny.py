@@ -151,7 +151,7 @@ if __name__ == '__main__':
 
     weak = 50
 
-    new_image = threshold(new_image, 5, 20, weak=weak, verbose=args["verbose"])
+    new_image = threshold(new_image, 4, 10, weak=weak, verbose=args["verbose"])
 
     new_image = hysteresis(new_image, weak)
 

@@ -51,8 +51,8 @@ class KMeans:
 if __name__ == '__main__':
     iris = sns.load_dataset("iris")
 
-    #g = sns.pairplot(iris, hue="species", palette="husl")
-    #plt.show()
+    # g = sns.pairplot(iris, hue="species", palette="husl")
+    # plt.show()
 
     col = ["sepal_length", "sepal_width", "species"]
     X = iris.drop(col, axis=1).values
@@ -63,8 +63,8 @@ if __name__ == '__main__':
     le = preprocessing.LabelEncoder()
     y = le.fit_transform(iris["species"])
 
-    #plt.scatter(X[:, 0], X[:, 1], c=y, cmap=plt.cm.Set1)
-    #plt.show()
+    # plt.scatter(X[:, 0], X[:, 1], c=y, cmap=plt.cm.Set1)
+    # plt.show()
 
     model = KMeans(3)
     model.fit(X)
